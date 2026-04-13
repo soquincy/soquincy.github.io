@@ -1,9 +1,99 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+:root {
+  --bg: #0e0e0e;
+  --fg: #f0f0f0;
+  --accent: #c8f540;
+  --muted: #888;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Host Grotesk', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 640px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  color: #444;
+  border-top: 1px solid #1a1a1a;
 }
