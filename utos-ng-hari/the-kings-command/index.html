@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"Utos ng Hari" ni Jun Cruz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e0ddd6;
+      --accent: #1a1a1a;
+      --card-bg: #f2f0eb;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Lora', serif;
+      --max-w: 720px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--fg); }
+
+    /* ARTICLE WRAPPER */
+    article {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* HEADER */
+    .article-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--fg);
+    }
+
+    .article-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-header .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .article-header .byline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* BODY TEXT */
+    p { margin-bottom: 1.2rem; }
+
+    a { color: var(--fg); }
+    a:hover { opacity: 0.6; }
+
+    /* HEADINGS */
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 2.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* IMAGES */
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    /* LISTS */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    /* SCORE CARD */
+    .score-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+    }
+
+    .score-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-card .score-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .score-card .score-row:last-child { border-bottom: none; }
+
+    .score-card .score-row.total {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      border-top: 2px solid var(--fg);
+      border-bottom: none;
+    }
+
+    .score-card .score-row span:last-child {
+      font-weight: 700;
+    }
+
+    /* NOTICE BOX */
+    .notice {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* FINAL SCOREBOARD */
+    .scoreboard {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      margin: 1.5rem 0;
+    }
+
+    .scoreboard th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--fg);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .scoreboard td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .scoreboard tr:last-child td { border-bottom: none; }
+
+    .tag-yes {
+      background: #d4edda;
+      color: #1a5c2a;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-no {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-maybe {
+      background: #fff3cd;
+      color: #856404;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* GLOSSARY */
+    .glossary dt {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .glossary dd {
+      margin-left: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-display);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="http://status.soquincy.qzz.io" target="_blank" rel="noopener">Projects Status</a>
+    <a href="/quincy-five-free-hosting-tests">"Free" PH Minecraft Hosting? Mostly Fake.</a>
+  </nav>
+
+  <article>
+
+    <header class="article-header">
+      <h1>The King's Command</h1>
+      <p class="byline">An English translation of "Utos ng Hari" by Jun Cruz Reyes, translated by Quincy So</p>
+    </header>
+
+		<p><em>“See you in my cubicle after lunch.”</em></p>
+
+		<p>Mrs. Moral Character called after me as class ended this morning. Mrs. Moral Character is our Social Science teacher. She's also our class adviser.</p>
+
+		<p>I felt like such an idiot, thinking and thinking about what she might say to me again. I was losing my appetite for lunch. I was almost certain another sermon was brewing. Just the other day, she almost pulled out her calculator to show me how <em>“stupid”</em> I was and how accurate her addition of my <em>“5s”</em> was. She followed up with my absences, then my tardiness. It wasn't reasonable to argue <em>“How can I not get a failing grade when you give quizzes whenever I'm absent? When I feel lazy to recite, that's when you force me to. And when I say what I want to say, out comes the red pen.”</em></p>
+
+		<p>But her mood seemed good in class earlier. In fact, we discussed her favorite topic—her dazzling Malaysian and her favorite perfume. She also gossiped (as usual). About how Mr. Espejo remained a bachelor because she rejected him twice when she was still single. About how Miss So-and-so wasn't in school not because of study leave, but because she went to America for an abortion. The bell was about to ring when she remembered our lesson about the normalization process in government.</p>
+
+		<p>She said earlier, <em>“For us to become fully democratic, we need a high literacy rate.”</em> (Rizal already said that.) <em>“The government must have an adequate communication system and the citizens must have high morality. And above all, we shouldn't become westernized in our standards. By so doing, we won't become uncivilized by western standards.”</em></p>
+
+		<p>When she asked me, I said we should take a more basic approach to looking at the problem. For example, why not start with the country's economic condition? If people are content, the government runs normally. But if many are dissatisfied, naturally the system becomes abnormal. It's not just about effective communication processes or high literacy rates. These are just manifestations of the real problem. She was surprised. That's when the bell caught up with us.</p>
+
+		<p>Damn this life, it makes me want to get feverish. How far yesterday is from today. When I'm at home, I'm the star. When my townspeople tell stories, I'm famous. But here in school, there's no scholar of the people.</p>
+
+		<p>I really want to quit, but Dad won't let me. After all, what father would be happy to have a dropout for a child? I'm really sick of being tied to my teacher's shoelaces, dragged along with every step they take. Turn whichever corner they want to go, go left even if you want to go right, walk and be dragged even if you want to rest. And be trampled even if you're the one getting hurt.</p>
+
+		<p>Oh, student life. Get a <em>“1”</em> grade, even if you have to swallow your own tongue. Go against them, you'll surely fail. Nod along to get a <em>“1,”</em> and that means you have to fool yourself. It's all about getting along. A little compromise, a little nodding and <em>“yes ma'am.”</em> That's worth a <em>“2”</em> or <em>“3.”</em> Why did diplomas even become popular in this world? Without a diploma, who would believe I have a future? I wish grades hadn't become popular, then I wouldn't be ashamed to work even as a Metro Manila Aide. But if I graduate and they ask for experience when I apply, I'm still screwed. And if I do graduate, it would be embarrassing to endure even jobs for the poor.</p>
+
+		<p>It's just grades—is that really a problem? <em>“1”</em> if it's <em>“1,”</em> <em>“5”</em> if it's <em>“5,”</em> end of discussion. Why do they need to drag it out? Fail if you fail. Kick-out if kick-out. But I shouldn't really be failing. Okay, they say I'm stubborn, rugged, and somewhat rude, but why do they need to include conduct and physical appearance in the discussion? This isn't military school, nor is it a seminary; why is it always <em>“Your conduct”</em> and <em>“appearance”</em> that they use to threaten us?</p>
+
+		<p>What's so bad about failing? Recto was a bar flunker but he's one of the recognized constitutionalists today. Einstein failed in Physics and grammar school but became a big-time scientist. Even his teacher back then didn't know his theory of relativity. Of course, I'm neither Recto nor Einstein. I'm just Jojo, who amounts to nothing if you ask my teachers. In my family, they say I'm smart, especially if you ask Dad. To our neighbors, I'm extraordinary—imagine, in our province, I'm the only one who made it to Manila to study for free. If only they knew.</p>
+
+		<p>Study and study. Study in the morning, study at noon, and study again at night. I don't even understand what all this studying is for. They never run out of things to research. All they know how to ask is <em>“what is our lesson today?”</em> They're like gods who have a monopoly on being right. So you can't question them, and you certainly can't tell them they're wrong.</p>
+
+		<p>Oh, teachers of the world, why were you even created by some bastard? Like Mrs. Moral Character—before starting a lesson, she'll first give a sermon about the virtue of honesty, about how cheating is bad, how it's a mortal sin to help a classmate who forgot the answer due to panic, how making a code is a crime, and so on. She seems to know everything bad and forbidden in the world. But we've already exposed her secret. During the past referendum, our morally upright teacher suddenly went blind and dumb. When she served as a poll watcher at the precinct, she only knew how to read three letters. Her reasoning was, <em>“What's wrong with that? Even if we lose, we still win. What can you do about it?”</em> That's why she's no longer Mrs. Moral Character to us—just Mrs. Eraser.</p>
+
+		<p>Then they wonder who we take after in this world.</p>
+
+		<p>Who among them could we possibly make our idol?</p>
+
+		<p>My English teacher doesn't care about the world. As long as she can use what she knows about voice and diction, she's happy with life. For us, our only role is to be listeners to her asides. We're like her therapy session. And her favorite topic is her ancestor who was supposedly pure Spanish and built a church in their town. Antique, of course, that church (like her and her grandfather). She just wants to show off that she has blue blood. I'd love to tell her that the Spaniards who came here back then were thugs and criminals in Spain. Rather than let them become their government's problem, they let the Philippines suffer the burden. That's the system she inherited from her grandfather—to exploit the long-suffering.</p>
+
+		<p>Our Math teacher has a different gimmick—if he catches you unprepared for our lesson, you're in trouble. He'll scold you with <em>“What? You still don't know that by now? Okay, that's your assignment for tomorrow.”</em> Then he'll accompany it by erasing what's wrong on the blackboard.</p>
+
+		<p>If they torment you daily, don't be surprised if you become stupid. You can't even go wild, and you can't even have fun. If, in enduring the torment, cigarettes and beer become your outlet for frustration, they'll immediately rationalize, <em>“I told you that vices are bad for studying.”</em></p>
+
+		<p>When it comes to vices, they say alcohol and nicotine are bad for the human body. It's like saying, once you become a teacher, it's okay. Because you're still just a student, endure it. Ask Mr. Discipline and he knows the answer perfectly. Don't even ask if he went through childhood too, if he was also stupid back then, because he'll answer, <em>“That's exactly why I don't want you to learn vices—I've been through that.”</em></p>
+
+		<p>In our group, two of us will be saying goodbye-my-school goodbye. I'll be kicked out for being troublesome. Minyong will be kicked out for being stupid.</p>
+
+		<p>How they determined that we should indeed be expelled from our beloved school went like this, according to the conversation between Mrs. Moral Character (Eraser), Mrs. Gles-ing, Mr. Mathematician, Miss Spermatozoa, Mr. Discipline, and others.</p>
+
+		<p><em>“It's not quorum, I mean quorum, no wait, quo-rum. I feel though he is brilliant, only my reservation is that...”</em></p>
+
+		<p><em>“Only he is stubborn. He'll come to my class drunk, as if he's trying to annoy you. He'll make you smell his breath.”</em></p>
+
+		<p><em>“How true, how true, I swear to God that's true.”</em></p>
+
+		<p><em>“Not only that, sometimes he wants to pester me in class as if he might catch me unprepared for my lesson. I pile him with research work, and he backs down.”</em></p>
+
+		<p><em>“And he is always absent. Sometimes I don't want to give him an excuse slip anymore.”</em></p>
+
+		<p><em>“So what is the verdict of the group?”</em></p>
+
+		<p><em>“I cannot pass him.”</em></p>
+
+		<p><em>“Me too.”</em></p>
+
+		<p><em>“I second the motion.”</em></p>
+
+		<p><em>“God will punish his naughtiness.”</em></p>
+
+		<p><em>“I will report the matter to his parents immediately.”</em></p>
+
+		<p>What's worse is their accusation against Minyong. They say he's going crazy. They love gossiping about him—that is, when they're not the ones being hit by what Minyong says. When a co-teacher they find annoying gets hit, their response is just <em>“Hi-hi-hi-hi.”</em> When Minyong hits bull's-eye, their excuse is <em>“My God, he's really crazy, doesn't know what he's saying.”</em></p>
+
+		<p>Minyong is a <em>“cultural minority.”</em> The guy didn't volunteer to study here in Manila. They took him from the mountains, then forcibly convinced him that here he would learn to lift his tribe from poverty, and now they're just going to kick him out. They call him stupid. They gave him one chance. They made him speak, supposedly to sharpen his skills so his inferiority complex would disappear. Well, when the guy learned to speak, they were shocked to hear the truth.</p>
+
+		<p>The king's group said:</p>
+
+		<p><em>“I find him kinda weird lately.”</em></p>
+
+		<p><em>“Definitely I cannot pass him.”</em></p>
+
+		<p><em>“That's right. We'd be setting a bad precedent. Stupidity would become trendy in school. Remember, this is Philippine School for Science and Technology, and we're going to pass a stupid student? No way.”</em></p>
+
+		<p><em>“But he's a cultural minority.”</em></p>
+
+		<p><em>“And so?”</em></p>
+
+		<p><em>“We should lower our standards for him.”</em></p>
+
+		<p><em>“Excuse me, there's only one standard for excellence and no exceptions.”</em></p>
+
+		<p><em>“What now?”</em></p>
+
+		<p><em>“What else—fail him.”</em></p>
+
+		<p>Then they chorused <em>“Fail him.”</em></p>
+
+		<p>When Minyong's case was reported in school, they had more or less decided on how the story would end. It went like this:</p>
+
+		<p><em>“Have you considered his case lately?”</em></p>
+
+		<p><em>“What shall we do with him? Do we have a policy for such cases?”</em></p>
+
+		<p><em>“It might be better to send him back to his tribe.”</em></p>
+
+		<p><em>“We should. He might hurt someone and involve many others.”</em></p>
+
+		<p><em>“Oh, how I abhor violence.”</em></p>
+
+		<p><em>“He might even start fires. Fires are popular in Manila now.”</em></p>
+
+		<p><em>“What if we have him confined in a mental institution?”</em></p>
+
+		<p><em>“And who will shoulder the bill?”</em></p>
+
+		<p>And that was the end of Minyong's case, even before deliberation started.</p>
+
+		<p>They're not always that quick to hand down verdicts. Sometimes they're <em>“humane,”</em> so to speak. Like in the cases of Osias and Armando, also our schoolmates.</p>
+
+		<p><em>“Let's pass Osias.”</em></p>
+
+		<p><em>“But he's low in Physics.”</em></p>
+
+		<p><em>“Come on, your class is really difficult.”</em></p>
+
+		<p><em>“That boy is thoughtful. Wherever you see him, it's always 'good morning.'”</em></p>
+
+		<p><em>“True. And he's immediately helpful when he sees you carrying many things.”</em></p>
+
+		<p><em>“True.”</em></p>
+
+		<p><em>“How about Armando? Another cultural minority?”</em></p>
+
+		<p><em>“Excuse me. He is not a thoroughbred minority. It is only the mother. The father is an Ilocano who migrated to Mountain Province.”</em></p>
+
+		<p><em>“That boy is so sweet. He takes after his father.”</em></p>
+
+		<p><em>“Really handsome.”</em></p>
+
+		<p><em>“You bet. The father is a doctor.”</em></p>
+
+		<p><em>“I'll pass him. He only has low grades because he was absent for a long time. He got sick.”</em></p>
+
+		<p><em>“So, are these two passing?”</em></p>
+
+		<p><em>“Approved.”</em></p>
+
+		<p>It's really hard in this world when you don't have a handsome father or a doctor for a dad.</p>
+
+		<p><em>“COME ON IN. Sit down,”</em> said Mrs. Moral Character after I knocked and was let into her cubicle. I found her stacking books.</p>
+
+		<p><em>“I called you for two reasons. Regarding our lesson and your attitude.”</em></p>
+
+		<p>Here we go again, I thought to myself. Why didn't I just get sick? I should have continued having a fever so I could avoid showing up and escape the waiting sermon.</p>
+
+		<p><em>“Jojo, people aren't just stomachs like you want to make it seem,”</em> she said with one eyebrow raised.</p>
+
+		<p>Don't say anything, I reminded myself. Just endure a little. It's hard to argue with a teacher—just smile. She'll stop when she gets tired. But it seemed she had no intention of shortcutting her sermon.</p>
+
+		<p><em>“What you said earlier has no essence—that's an example of an a priori statement. Do you get me?”</em> I nodded.</p>
+
+		<p><em>“Good. Now you probably know that you have no data to back you up, which I happen to have. You're just spouting speculations that have no meaning in the scientific world. Our lesson is more complicated than you thought. What you probably mean is the role of economic determinism in contemporary Philosophy, which is altogether wrong. Why don't you use the power or elite approach? Behaviorism is the trend now in the west. Why don't you follow suit?”</em></p>
+
+		<p>Don't pay attention, just smile. I reminded myself again. Let her talk and talk. Eventually, she'll run out of things to say. In one ear, out the other. She's the teacher so she feels like she's the only one who can be right.</p>
+
+		<p><em>“Do you get me?”</em></p>
+
+		<p>I nodded again. And now, part II of her sermon.</p>
+
+		<p><em>“To be honest with you, I don't like your attitude in class. Smart aleck!”</em> I just bowed my head. Then I mumbled <em>“I'm sorry, ma'am.”</em></p>
+
+		<p>Even without looking at her, I knew she was nodding with joy. Her ears were secretly clapping with delight. She had tamed the school rebel. If only I were as <em>“honest”</em> as her, I could have said, <em>“The feeling is mutual. I also don't like you, ma'am.”</em> Instead, all I said was <em>“Can I go now, ma'am?”</em></p>
+
+		<p><em>“I'm not yet through.”</em> Meaning there was still part III to this conversation.</p>
+
+		<p><em>“They saw you in the chapel last night.”</em></p>
+
+		<p>My God, now they're meddling with my personal life too, I thought to myself. I could feel the heat of her stare on my face.</p>
+
+		<p><em>“How young are you, Jojo? Speak up.”</em></p>
+
+		<p>I don't owe her any explanation. I won't answer.</p>
+
+		<p><em>“Speak up, I said.”</em></p>
+
+		<p><em>“Seventeen.”</em></p>
+
+		<p><em>“Seventeen and already you are...”</em> Whether she liked it or not, I'd heard enough. I stood up to leave. Before I could take a step, she continued her sermon.</p>
+
+		<p><em>“I'll let your mother know about this.”</em></p>
+
+		<p>I really wanted to explode. I wanted to turn back to her. I wanted to throw all my resentment at the world in her face. I wish I were as brave as I wanted to be. What was wrong with what I did in the chapel? Tess and I just held hands. Is that wrong? Maybe what was wrong was why Mrs. Glesing suddenly decided to stroll through the chapel at that hour of the night. Poor Tess. I'm almost certain she'll be made an example again by Mrs. Moral Character of what a female student shouldn't become. Mrs. Glesing, for sure, almost had her tongue go up her nose from commanding her scoop.</p>
+
+		<p>What else can I do but punch the air again and mutter <em>“someday.”</em> If I go crazy like Minyong, they probably won't enjoy it, but I'm sure they'll wonder why.</p>
+
+		<p>My troublemaker friends were in the lobby.</p>
+
+		<p><em>“Jo, we heard you're in the spotlight again.”</em></p>
+
+		<p><em>“Let those bastards be, they'll get tired eventually,”</em> I replied.</p>
+
+		<p><em>“If you two had gone to a motel, then they wouldn't know anything.”</em></p>
+
+		<p><em>“Stop it,”</em> I said.</p>
+
+		<p><em>“What did you two really do that made Mrs. Glesing's pimples explode in our class this morning?”</em></p>
+
+		<p><em>“What else could we do in a chapel? Even if you had magic, no miracles would happen there,”</em> I said.</p>
+
+		<p><em>“Why don't you court Mrs. Glesing?”</em></p>
+
+		<p><em>“You're another crazy one.”</em> Damn this life, I'm being teased again.</p>
+
+		<p><em>“You never know, maybe she has some Mrs. Robinson blood in her.”</em> Then they laughed. I ended up laughing too even though I was fed up with life.</p>
+
+		<p><em>“Let's just go to Cubao,”</em> I invited them.</p>
+
+		<p>ONE ROUND of beer was followed by another and another. Then topped off with one-for-the-road. As fast as the bottles emptied, so did time pass.</p>
+
+		<p><em>“What did you really do in the chapel?”</em></p>
+
+		<p><em>“What else—holding hands. Is that wrong? We just vowed in front of the altar not to separate even if I get kicked out. Is that obscene? Why do they have such dirty minds? As if they never held hands when they were young.”</em></p>
+
+		<p><em>“How did they become human then?”</em></p>
+
+		<p><em>“Just by looking at each other, they got pregnant.”</em></p>
+
+		<p>Then they laughed. At least they could be happy somehow. Me, even in having fun, I still see my teachers. This is too much. Why won't they let me see truths different from what they're used to? Why do they want everyone in the world to look like them? Is it because they think they discovered the mine of intelligence and correctness, so there's nothing left for us to discover? But isn't what they call expertise—twenty years in service—just one year of experience stretched to twenty years?</p>
+
+		<p>I just thought of this now—if Beethoven were alive and took an exam in school, whether as a student or teacher, he certainly wouldn't be accepted. This is Philippine School for Science and Technology, the school of future scientists, and they'd treat and consider as a person someone who, aside from being lazy to dress up, rarely bathes?</p>
+
+		<p>Einstein? He was a genius, but he didn't comb his hair. He'd be kicked out too. Long hair is forbidden in school. Mr. Discipline would definitely tell him, <em>“Comply with school requirements. Maximum tolerable haircut please.”</em> Meaning shave the nape. Make the top a bowl cut.</p>
+
+		<p>How about Hemingway? He wouldn't work either—he was a man of vices. Drunkards are forbidden in class. What about Maxim Gorky, the great Russian writer according to Chekhov and Tolstoy—could he teach comparative literature here? I don't think so either. Besides not having units in English, he also has no diploma in Education.</p>
+
+		<p>What about Christ if he came back to life and went to Science? They say he was a teacher even without an M.A. and Ph.D. Would they let him in at the gate? No way. If Mrs. Moral Character or Mrs. Glesing met him there, they might get shocked. I think they'd say something like this: <em>“Imagine, so bold, but what rude appearance. Long hair, doesn't shave, and wearing sandals. So what if he's the son of God, he has no sense of decorum.”</em> And if Christ preached here, he might just be exposed with <em>“Who is your authority, where is your data, behavioralism is the trend now in the West, why don't you follow suit?”</em> Maybe that's why he chose a manger as his birthplace—because if he were born in science, the history of Christianity in the world would change.</p>
+
+		<p>Oh, sense of propriety and decorum, truly mind-boggling. Clean cut (comb Einstein's hair). White polo shirt and black pants (make Christ look decent). I wonder if propriety is also what teachers call it when they wear civilian clothes on Wednesdays. Like they're attending a party. Where the type of fabric is immediately noticeable and people say, <em>“Oh, how beautiful, where did you buy it? It must be expensive, right?”</em> Which the other person answers with, <em>“It's cheap, just a hundred per yard (eight dollars is now the equivalent of a peso). Christian Dior, that's original, not Rustan's-made.”</em> And to really get noticed, they need to be fragrant with perfume. Like a painting (surreal style). Then they load up their ears, neck, chest, arms, and fingers with diamonds. In their <em>“beauty”</em> and <em>“sparkle,”</em> you're like seeing a Christmas tree on an expensive day. That's what's proper to them.</p>
+
+		<p>Of course, they can't help that anymore. The night we were caught by Mrs. English, Tess and I, that's when I noticed Christ's appearance. They say he was insulted by the Jews, so they nailed him naked to the cross. But the Mrs. Moral Characters, Mrs. Englishes, Mr. Mathematicians, and Mr. Disciplines and their tribes are insulted by nakedness. That's probably why they covered Christ's nakedness with cloth shining with so many sequins. Virgin Mary was supposedly married to a mere carpenter, but in her current appearance, she looks like a peacock and Christmas tree too. Even her tears were turned into pearls.</p>
+
+		<p>What they can't become like, they immediately notice. The person who believes in himself is whom they want to blaspheme. Who am I, Jojo, to them anyway—just <em>“some nobody.”</em> When they were still students, did they pass Science? Were they scholars too? But why did they just become teachers for such a long time? Is that all they know in life—teaching? They're like they were never children. As if when they were born, they already knew everything. Maybe they think being a student is a joke. Was their conduct in class back then all <em>“1s”</em>? If they really never make mistakes, this should be reported immediately to the Holy Pope in Rome. The living saints are apparently just here in the Philippines.</p>
+
+		<p>What else can I meddle with? Where can I be a hero in this world? At least in the referendum, we're included. Which is more important—the fate of the Philippines can be gambled, but we can't decide who's sexier, Alma Moreno or Elizabeth Oropesa. That's <em>“for adults”</em> only.</p>
+
+		<p>Oops. I got carried away thinking. My friends are now talking about something else.</p>
+
+		<p><em>“Should we put thumbtacks on Mrs. English's chair?”</em></p>
+
+		<p><em>“She'll hurt, but when she remembers her poise, she'll say, 'Oh, I mean ouch!'”</em></p>
+
+		<p><em>“Hi hi hi hi.”</em></p>
+
+		<p>At least they can manage to grin. But me, who can I complain to? Should I write to Valencia? Maybe he'll just answer me with <em>“Just drink coffee.”</em> How about Marcos? He's got a pile of problems in life—imagine, he has to worry about the fate of the Philippines, and someday he'll have to answer for it in history. How would he notice me? Should I report to Carter? This is also a human rights issue—the fate of sadistic students—but it's hard to speak English. Besides, he's only interested in wars they're losing in.</p>
+
+		<p>Should I just write to God? But he's supposedly in all places and corners, so he certainly already knows my problem. Why wasn't there a <em>“Blessed are the poor students for they shall inherit...”</em> in the Sermon on the Mount? Probably because he has no heaven or earth left to bequeath to others.</p>
+
+		<p>I don't want to become like Minyong. I need to speak up or I might go crazy. I don't want to become a robot, I don't want to become a stone. I don't mind being a dropout, as long as I remain human. The comfort room is too small for me to write my complaints there. Many have preceded me. <em>“What you're holding now is the future of the Fatherland.”</em> <em>“If you can reach this high, you shall be great.”</em> <em>“Down with fascism.”</em> <em>“LABAN.”</em> <em>“Fuck y'all.”</em> <em>“Alpha Phi Omega.”</em> <em>“Wanted pen pal.”</em></p>
+
+		<p>I'll complain to the wall too if necessary, until someone reads and hears my complaint. But for now, I'll just vent my frustration in my head.</p>
+		
+  </article>
+
+  <footer>
+    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@www.soquincy.qzz.io">hello@www.soquincy.qzz.io</a>
+  </footer>
+
+</body>
+</html>

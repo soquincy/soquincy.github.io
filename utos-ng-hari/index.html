@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"Utos ng Hari" ni Jun Cruz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e0ddd6;
+      --accent: #1a1a1a;
+      --card-bg: #f2f0eb;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Lora', serif;
+      --max-w: 720px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--fg); }
+
+    /* ARTICLE WRAPPER */
+    article {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* HEADER */
+    .article-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--fg);
+    }
+
+    .article-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-header .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .article-header .byline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* BODY TEXT */
+    p { margin-bottom: 1.2rem; }
+
+    a { color: var(--fg); }
+    a:hover { opacity: 0.6; }
+
+    /* HEADINGS */
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 2.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* IMAGES */
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    /* LISTS */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    /* SCORE CARD */
+    .score-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+    }
+
+    .score-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-card .score-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .score-card .score-row:last-child { border-bottom: none; }
+
+    .score-card .score-row.total {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      border-top: 2px solid var(--fg);
+      border-bottom: none;
+    }
+
+    .score-card .score-row span:last-child {
+      font-weight: 700;
+    }
+
+    /* NOTICE BOX */
+    .notice {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* FINAL SCOREBOARD */
+    .scoreboard {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      margin: 1.5rem 0;
+    }
+
+    .scoreboard th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--fg);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .scoreboard td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .scoreboard tr:last-child td { border-bottom: none; }
+
+    .tag-yes {
+      background: #d4edda;
+      color: #1a5c2a;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-no {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-maybe {
+      background: #fff3cd;
+      color: #856404;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* GLOSSARY */
+    .glossary dt {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .glossary dd {
+      margin-left: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-display);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="http://status.soquincy.qzz.io" target="_blank" rel="noopener">Projects Status</a>
+    <a href="/quincy-five-free-hosting-tests">"Free" PH Minecraft Hosting? Mostly Fake.</a>
+  </nav>
+
+  <article>
+
+    <header class="article-header">
+      <h1>Utos ng Hari</h1>
+      <p class="byline">Jun Cruz Reyes</p>
+    </header>
+
+    <p><em>“See you in my cubicle after lunch.”</em> Pahabol sa akin ni Mrs. Moral Character kanginang matapos ang klase. Si Mrs. Moral Character ang teacher namin sa Social Science. Siya rin ang adviser namin.</p>
+
+    <p>Para naman akong si gago na isip nang isip kung ano na naman ang sasabihin nito sa akin. Nawawalan tuloy ako ng ganang mananghalian. Halos tiyak ko nang sermunang umaatikabo na naman ito. Kamakalawa lamang ay halos ilabas niya ang kanyang calculator para ipakita kung gaano ako ‘katanga’ at kung gaano katama ang kanyang pagsuma sa aking mga “5.” Isinunod niya ang mga absences ko tapos, ang aking mga lates. Hindi naman maikatwirang “Paano ako di masisingko, kung kailan ako absent ay saka ka magbibigay ng quiz. Kung kelan tinatamad mag-recite, saka namimilit. Saka pag sinabi ko naman ang gusto kong sabihin kakapain na ‘yung pulang ballpen.</p>
+
+    <p>Pero tipong maganda naman ang kanyang mood sa klase kangina. Katunaya’y yung paborito niyang paksa ang pinagusapan namin. ‘Yung kanyang dazzling Malaysian at ang kanyang paboritong pabango. Nag-tsismis din siya (tulad ng dati). Kesyo si Mr. Espejo raw, kaya tumandang binata, dahil dalawang beses niyang binasted noong dalaga pa siya. Si Miss Kuwan daw, kaya wala sa eskuwelahan, hindi dahil nag-study leave, kundi nagpa-abort sa Amerika. Magbi-bell na nang maalala niya ang leksiyon namin, ang normalization process sa gobyerno.</p>
+
+    <p>Sabi niya kangina, “Para tayo maging fully democratic kailangan mataas ang literacy rate.” (Sinabi na yon ni Rizal.) “May sapat na communication system ang pamahalaan at may mataas na moralidad ang mamamayan. At hgit sa lahat, kailangan hindi tayo magiging westernized ang ating pamantayan. By so doing, hindi tayo magiging uncivilized sa western standards.”</p>
+
+    <p>Nang tanungin niya ako, sabi ko’y mas basic ang dapat na pamamaraan sa pagtingin sa problema. Halimbawa’y bakit hindi umpisahan sa economic condition ng bansa. Kung kuntento ang mga tao, normal ang takbo ng pamahalaan. Pero kung maraming dissatisfied, natural na abnormal ang sistema. Hindi basta effective communication process, hindi rin basta mataas na literacy rate. Mga manipestasyon lang ito ng talagang problema. Nabigla siya. Doon na kami inabutan ng bell.</p>
+    
+    <p>Ay kunsumisyon sa buhay gusto akong lagnatin. Kay layo ng kahapon sa kasalakuyan. Pag nasa bahay ako. ako ang bida. ‘Pag ang mga kababayan ko ang magkukuwento, ako ang sikat. Pero dito sa eskuwelahan, walang isko-scholar ng bayan.</p>
+    
+    <p>Talagang gusto ko nang huminto, pero ayaw ni Tatay. Kung sa bagay sino bang ama ang matutuwang magka-anak ng drop-out? Talagang sawa na akong nakatali sa sintas ng sapatos ng teacher ko na kasama nila sa bawat hakbang. Ipaling kung saang sulok gustong dalhin, ikaliwa kahit kanan ang gustong puntahan, ilakad-kaladkarin kahit gustong mamahinga. At isipa kahit ako ang masaktan.</p>
+    
+    <p>Ay buhay estudyante, Maka-uno lang, kahit lulunin ang sariling dila. Kumontra ka sa kanila, singkong maliwanag. Tumangutango ka naman para maka-uno, ibig sabihin noo’n sarili mo na ang kailangang lokohin. Pakisama lang talaga. Konting kompromiso, konting tango at <em>“yes ma’am”</em> lang. Dos na ‘yon o tres. Kung bakit naman kasi nauso pa sa mundo ang diploma. Kung wala akong diploma, sino naman ang maniniwalang may kinabukasan nga ako. Sana’y hindi nauso ang grade, di sana’y hindi ako mahihiyang pumasok kahit Metro Manila Aide. Kung graduate naman ako’t hingan ng experience sa pag-aaplayan ko, dedo pa rin. At kung tapos nga, nakakahiya namang pati trabahong pangmahirap ay pagtiyagaan ko.</p>
+
+    <p>Grade lang naman, problema ba yon? Uno kung uno. Singko kung singko, tapos ang usapan, bakit kailangan pahabain pa? Bagsak kung bagsak. Kick-out kung Kick-out. Pero hindi naman talaga ako dapat bumagsak. O.K. Matigas daw ang ulo ko, rugged at medyo bastos pa raw pero bakit kailangan isali pati conduct at ayos ng katawan sa usapan? Hindi naman ito military school, hindi rin naman seminaryo; bakit panay “Yung conduct mo” at “appearance” ang panakot nila.</p>
+    
+    <p>Ano ba ang masama nang bumagsak? Kung si Recto, bar flunker pero isa sa kinikilalang constitutionalist ngayon. Si Einstein, bumagsak sa Physics at grammar school pero bigtime scientist. Kahit teacher niya noon hindi alam ang theory niya ng relativity. Kung sa bagay, hindi naman ako si Recto o si Einstein. Si Jojo lang ako, ang walang sinabi kung teachers ko ang tatanungin. Sa pamilya marunong daw ako lalo’t si Tatay ang tatanungin. Sa mga kapitbahay namin, pambihira daw ako, biro mong sa probinisiya namin ay ako lang ang nakarating ng Maynila para mag-aral ng libre. Kung malalaman lang nila.</p>
+    
+    <p>Aral nang aral. Aral sa umaga, aral sa tanghali at aral pa ulit sa gabi. Hindi ko naman maintindihan kung para ano ang pinag-aaralan. Hindi na naubusanng ipari-research. Walang alam itanong kung hindi “what is our lesson today?” Parang mga diyos na sila lamang ang may monopoliya ng tama. Kaya hindi pwedeng tanungin at lalong hindi pwedeng pagsabihan ng mali.</p>
+    
+    <p>Ay, mga teacher sa mundo, bakit ba ginawa pa ng kung sinong hayupak. Tulad ni Mrs. Moral Character, bago magumpisa ng leksiyon, magsesermon muna ng virtue of honesty, kesyo masamang mandaya, kasalanang mortal ang magturo sa kaeskuwelang nakalimutan ang sagot dahil sa pagkataranta, krimen ang magkodigo at kung anu-ano pa. Lahat na yata ng masama at bawal sa mundo ay alam. Pero ang kaniyang lihim ay nabuko na namin. Noon daw nakaraan referendum ang teacher naming morally upright ay biglang nabulag at nabobo. Nang mag-watcher daw ito sa presinto, tatlong letra lang ang kabisadong basahin, katwiran daw nito’y “Anong sama doon, kahit matalo, panalo pa rin. Bakit me magagawa ka ba? “Kaya naman ngayon hindi na siya si Mrs. Moral Character sa amin, Mrs. Eraser na lang.</p>
+    
+    <p>Tapos magtataka pa kung kangino kami nagmana sa mundo.</p>
+    
+    <p>E sino naman kaya sa kanila ang pwedeng gawing idolo?</p>
+    
+    <p>‘Yung teacher ko sa English, walang pakialam sa mundo. Basta magamit lang niya ‘yung nalalaman niya sa voice and diction, maligaya na siya sa buhay. Basta kami ang papel lang namin, tagapakinig sa kanyang asides. Para tuloy Kaming pang therapy lang niya. At ang kanyang paboritong paksa, yung kanyang nuno na purong kastila raw na nagpapatayo ng simbahan sa kanilang bayan. Antique s’yempre ‘yung simbahan (tulad niya at ng kanyang lolo). Ibig lang niyang palabasing may dugo siyang bughaw. Sarap sanang bukuhin na ang mga kastilang napunta rito noong araw ay mga butangero at kriminal sa Espanya. Kesa nga naman maging problema sila ng gobyerno nila, di Pilipinas na ang bahalang magtiis ng konsumisyon. ‘Yung ganong sistema ang namana niya sa kanyang lolo, ang mangunsumi ng mapagtiis. Yun namang teacher namin sa Math iba ang gimmick, ‘pag nabuko mong hindi naghanda sa lesson namin lagot ka na. Pagsasabihan ka nito ng “What? Iyon lang hindi mo pa alam hanggang ngayon? OK. That’s your assignment for tomorrow.” Saka niya sasabayan ng bura ang maling nakasulat sa blackboard.</p>
+    
+    <p>Kunsumihin ka ba naman araw-araw, pag naging gago ka nagtataka pa. Hindi ka na nga pwedeng magwala, hindi ka pa rin pwedeng maglibang. Kung sa pagtitiis ng kunsumi ay sigarilyo at beer ang mapiling pagbuntuhan ng sama ng loob, ayun at “Sinabi ko ng nga bang masama sa pag-aaral ang bisyo,” ang agad ikakatuwiran ng mga ito.</p>
+    
+    <p>Kung bisyo naman ang pag-uusapan, masama raw sa katawan ng tao ang alkohol at nikotina. Para na ring sinabing, pag teacher ka na ay pwede na. Dahil estudyante ka pa lang, tiis. Itanong mo kay Mr. Discipline at alam na alam niya ang sagot. Huwag mo nang itanong kung nagdaan din siya sa pagkabata, kung noong araw ay gago rin siya, dahil ang isasagot nito’y “kaya nga ayaw kong matutuhan n’yo ang bisyo dahil pinagdaanan ko na yan.”</p>
+    
+    <p>Sa amin sa barkada, dalawa kaming mag-gu-goodbye-my-school goodbye. Kickout ako dahil sa kagaguhan daw. Si Minyong nama’y sa kabobohan daw.</p>
+    
+    <p>Kung paano nila natiyak na dapat nga kaming palayasin sa pinakamamahal naming paaralan, ganito raw ang naging takbo ng usapan nina Mrs. Moral Character (Eraser), Mrs. Gles-ing, Mr. Mathematician, Miss Spermatozoa, Mr. Discipline at iba pa.</p>
+    
+    <p><em>“Hindi naman korum, say quorum, Kuwow, quo-rum. I feel though he is brilliant, only my reservations is that….”</em></p>
+    
+    <p><em>“Only he is stubborn. Papasok ‘yan sa klase ko nang nakainom, para pang nang-iinis na lalapitan ka. Ipapaamoy sa iyo ang hininga.”</em></p>
+    
+    <p><em>“How true, how true, I swear to God that’s true.”</em></p>
+    
+    <p><em>“Hindi lang yan, minsan gusto pa mandin akong kulitin sa klase na akala mo’y mahuhuli niya akong hindi prepared sa lesson ko. Tambakan ko nga ng research work, di atras siya.”</em></p>
+    
+    <p><em>“And he is always absent. Sometimes I don’t want to give him an excuse slip anymore.”</em></p>
+    
+    <p><em>“So what is the verdict of the group?”</em></p>
+    
+    <p><em>“I cannot pass him.”</em></p>
+    
+    <p><em>“Ako rin.”</em></p>
+    
+    <p><em>“I second the motion.”</em></p>
+    
+    <p><em>“God will punish his naughtiness.”</em></p>
+    
+    <p><em>“I will report the matter to his parents immediately.”</em></p>
+    
+    <p>Ang masama ay ang akusasyon nila kay Minyong. Nababaliw daw. Tuwang-tuwa silang pagtsismisan ito, yon ay kung hindi sila ang tinatamaan ng mga pinagsasabi ni Minyong. Pag medyo kinabubuwisitan nilang co-teacher ang tinamaan “Hi-hi-hi-hi” lang ang sagot nila. Pag-bull’s-eye si Minyong, “My God, baliw talaga, hindi alam ang sinasabi,” ang katwiran nila.</p>
+    
+    <p>Si Minyong kasi ay “cultural minority.” Hindi naman nagprisinta sa kanila ‘yung tao na dito sa Maynila mag-aaral. Kinuha-kuha nila sa bundok, tapos pilit pinaniwalang dito nito matututunan ang paghango sa kahirapan ng kanilang tribo, saka ngayon, basta na lang sisipain. Bobo ang sabi nila. Binigyan ng isang pagkakataon. Pinagsalita, para raw mahasa nang gayo’y mawala ang inferiority complex nito. Ayon, nang matutong magsalita ang tao, na-shock silang marinig ang katotohanan.</p>
+    
+    <p><em>Sabi ng pangkat ng hari.</em></p>
+    
+    <p><em>“I find him kinda weird lately.”</em></p>
+    
+    <p><em>“Definitely I cannot pass him."</em></p>
+    
+    <p><em>“Oo nga naman. Gagawa tayo ng masamang precedent. Mauuso ang bobo sa eskuwelahan. Remember Philippine School for Science and Techonology ito, tapos magpapasa tayo ng estudyanteng bobo? Hindi pwede.”</em></p>
+    
+    <p><em>“Pero cultural minority ‘yan.”</em></p>
+    
+    <p><em>>“And so?”</em></p>
+    
+    <p><em>“...kailangan babaan natin ang standard sa kanya.”</em></p>
+    
+    <p><em>“Excuse me? Mayroon lamang isang standard ang excellence at wala nang exception pa.”</em></p>
+    
+    <p><em>“What now?”</em></p>
+    
+    <p><em>“Ano pa, di bagsak.”</em></p>
+    
+    <p>Saka sila nagkorus ng <em>“ibagsak.”</em></p>
+    
+    <p>Kung sa bagay nang mabalita ang kaso ni Minyong sa eskuwelahan, humigit-kumulang ay nakapagpasiya na sila sa magiging dulo ng istorya. Ganito raw iyon.</p>
+    
+    <p><em>“Have you considered his case lately?”</em></p>
+    
+    <p><em>“Anong gagawin natin sa kanya? Meron ba tayong policy sa ganyang kaso?”</em></p>
+    
+    <p><em>“Mabuti siguro pauwiin na natin sa kanilang tribo.”</em></p>
+
+    <p><em>“Dapat nga, baka manakit pa yan at maraming madamay.”</em></p>
+    
+    <p><em>“Oh, how I abhor violence.”</em></p>
+    
+    <p><em>“Baka ‘ka mo manunog pa ‘yan. Uso pa naman sa Maynila ang sunog ngayon.”</em></p>
+    
+    <p><em>“E kung ipa-confine natin sa mental?”</em></p>
+    
+    <p><em>“At sinong magsu-shoulder ng bill?”</em></p>
+
+    <p>Tapos ang kaso ni Minyong bago pa man pasimulan ang deliberasyon.</p>
+
+    <p>Hindi naman sila parating ganoon kabilis magbaba ng hatol. Paminsan-minsan nama’y “humane” sila ‘ika nga. Tulad halimbawa sa kaso nina Osias at Armando, mga kaiskwela rin namin.</p>
+
+    <p><em>“Ipasa na natin si Osias.”</em></p>
+    
+    <p><em>“Pero mababa ‘yan sa Physics.”</em></p>
+    
+    <p><em>“Sus naman ito, e talaga namang mahirap yang klase mo.”</em></p>
+    
+    <p><em>“Thoughtful ‘yang batang ‘yan. Kahit saan ka makita ay panay ang good morning.”</em></p>
+    
+    <p><em>“Talaga. At prisintado agad ‘yan pag nakasulubong ka na maraming dala.”</em></p>
+    
+    <p><em>“Talaga.”</em></p>
+    
+    <p><em>“How about Armando? Another cultural minority?”</em></p>
+
+    <p><em>“Excuse me. he is not a thoroughbred minority. It is only the mother. The father is an Ilocano who migrated to Mountain Province.”</em></p>
+
+    <p><em>“Ang sweet-sweet ng batang yan. Manang-mana sa Tatay niya.”</em></p>
+    
+    <p><em>“Pogi talaga.”</em></p>
+    
+    <p><em>“You bet. Doctor pala ang ama n’yan.”</em></p>
+    
+    <p><em>“Ipapasa ko ‘yan. Kaya lang naman ‘yan mababa, kasi matagal umabsent. Nagkasakit kasi.”</em></p>
+    
+    <p><em>“Ano, pasado na ‘tong dalawa?”</em></p>
+    
+    <p><em>“Approve.”</em></p>
+
+    <p>Mahirap talaga sa mundo ang walang amang pogi o duktor.</p>
+
+		<p><em>“Come on in. Sit down.”</em> sabi ni Mrs. Moral Character matapos akong kumatok at papasukin sa kanyang cubicle. Inabutan ko siyang nagsasalansan ng mga libro.</p>
+
+		<p><em>“I called you for two reasons. Regarding our lesson and your attitude.”</em></p>
+
+		<p>Heto na naman kami sa loob-loob ko. Kung bakit kasi hindi na lang ako nagkasakit. Sana’y natuloy na ang lagnat ko para pwedeng huwag magpakita sa kanya at tuloy maiwasan ang sermon na nag-aabang.</p>
+
+		<p><em>“Jojo, ang tao’y hindi-pulos tiyan tulad nang gusto mong palabasin,”</em> sabi niya habang nakataas ang isang kilay.</p> 
+		
+		</p>Huwag kang kikibo, paalala ko sa aking sarili. Konting tiis, Mahirap makipagtalo sa teacher, ngiti ka lang basta. Titigil din ‘yan pag nagsawa. Pero tipong wala siyang balak mag-short cut ng sermon.</p>
+
+		<p><em>“Walang essence ang pinagsasabi mo kangina, iyon ay isang halimbawa ng a priori statement. Do you get me?”</em></p>
+
+		<p>Tumango naman ako.</p>
+
+		<p><em>“Good. Now alam mo sigurong wala kang pinanghahawakan data, which I happen to have. Panay speculations lang ang pinagsasabi mo at walang katuturan ito sa scientific world. Our lesson is more complicated than you thought. What you mean probably is the role of economic determinism in contemporary Philosophy, which is altogether wrong. Bakit hindi mo gamitin ang power o elite approach? Behaviorlism ang trend ngayon sa west. Bakit hindi ka makigaya?”</em></p>
+
+		<p>Huwag mong pansinin, ngiti lang. Paala ko ulit sa sarili ko. Hayaan mo lang siyang magsalita nang magsalita. Pasasaan ba’t, mauubusan din iyan ng sasabihin. Pasok sa kanang tenga, labas sa kaliwa. Siya ang teacher kaya ang pakiramdam niya’y siya lang ang puwedeng tama.</p>
+
+		<p><em>“Do you get me?”</em></p>
+
+		<p>Tango pa rin ako. At ngayon. ang part-II ng kanyang sermon.</p>
+
+		<p><em>“To be honest with you, I don’t like your attitude in class. Smart aleck!”</em></p>
+
+		<p>Yuko na lang ako. Saka ako bumulong ng <em>“I’m sorry, ma’am.”</em></p>
+
+		<p>Kahit hindi ko siya tingnan, alam kong tatango-tango siya sa tuwa. Lihim na namang pumapalakpak ang kanyang tenga sa tuwa. Napaamo niya ang suwail ng eskuwelahan. Sana’y kasing ‘honest’ din niya ako, di sana’y nasabi ko ring, <em>“The feeling is mutual. I also dont like you, ma’am.”</em> Sa halip, ang nasabi lang ay <em>“Can I go now, ma’am?”</em></p>
+
+		<p><em>“I’m not yet through.”</em> Ibig sabihi’y may part-III pa ang usapang ito.</p>
+
+		<p><em>“They saw you in the chapel last night.”</em></p>
+
+		<p>Diyos me, pati pala personal life ko’y pinakikialam na rin nila ngayon, sa loob-loob ko. Nararamdaman ko ang init ng kanyang titig sa aking mukha.</p>
+
+		<p><em>“How young are you Jojo? Speak up.”</em></p>
+
+		<p>Wala akong dapat ipaliwanag sa kanya. Hindi ako sasagot.</p>
+
+		<p><em>“Speak up, I said.”</em></p>
+
+		<p><em>“Seventeen.”</em></p>
+
+		<p><em>“Seventeen and already you are…”</em></p>
+
+		<p>Sa ayaw at sa gusto niya, tama na ang narinig ko. Tumayo ako para umalis. Bago ako nakahakbang, dinugtungan pa niya ang kanyang sermon.</p>
+
+		<p><em>“I’ll let your mother know about this.”</em></p>
+		
+		<p>Gusto ko na talagang magwala. Gusto ko siyang balikan. Gusto kong isambulat sa mukha niya ang lahat ng hinanakit ko sa mundo. Sana’y kasing tapang ako ng gusto kong mangyari. Ano bang masama sa ginawa ko sa chapel. Magkahawak lang kami ng kamay ni Tess. Masama ba yon? Siguro ang masama’y kung bakit biglang napasyal si Mrs. Glesing sa chapel ng ganoong oras ng gabi. Kawawang Tess. Halos natitiyak ko nang gagawin na naman itong halimbawa ni Mrs. Moral Character sa kung ano ang hindi dapat maging ang isang babaeng estudyante. Si Mrs. Glesing, tiyak na halos pumasok ang dila sa ilong sa pagmamando ng kanyang scoop.</p>
+
+		<p>Ano pa ang magagawa ko, di suntok na lang ulit sa hangin at magbulong ng balang-araw. Kung mababaliw ako tulad ni Minyong, siguro’y hindi nila ikatutuwa, pero natitiyak kong ipagtataka rin nila kung bakit.</p>
+
+		<p>Nasa lobby ang mga barkada kong alaskador.</p>
+
+		<p><em>“Jo, balita nami’y bida ka na naman.”</em></p>
+
+		<p><em>“Hayaan mo ang mga hayupak na ya’t magsasawa din yan,”</em></p>
+
+		<p><em>“Kung magmu-motel kayo, di wala sana silang alam.”</em></p>
+
+		<p><em>“Tigil,”</em> sabi ko.</p>
+
+		<p><em>“Ano ba talaga ang ginawa ninyo’t nagpuputok ang butsi ni Mrs. Glesing sa klase namin kangina?”</em></p>
+
+		<p><em>“Isa pa ‘to, anong magagawa ko sa chapel? Kahit ka may madyik, walang himalang mangyayari roon,”</em> sabi ko.</p>
+
+		<p><em>“Ligawan mo kaya si Mrs. Glesing?”</em></p>
+
+		<p><em>“Tarantado, isa ka pa.”</em> Buwisit na buhay ito, alaskado na naman ako.</p>
+
+		<p><em>“Malay mo baka may lahing Mrs. Robinson ‘yon.”</em> Saka sila nagtawanan. Nakitawa na rin ako kahit nabuburat na ako sa buhay.</p>
+
+		<p><em>“Tara na lang sa Cubao,”</em> yaya ko sa kanila.</p>
+
+		<p>‘YUNG ISANG ROUND ng beer ay nasundan ng isa pa nga at isa pa ulit. Saka pinabuntunan ng one-for-the-road. Kung gaano kabilis ang bote ay ganoon din kabilis ang oras.</p>
+
+		<p><em>“Ano ba talaga ang ginawa mo sa chapel?”</em></p>
+
+		<p><em>“Ano pa, di holding hands. Masama ba yon? Para nagsumpaan lang kami sa harap ng altar ng hindi maghihiwalay kahit ako ma-kick-out kabastusan na ba yon? Bakit kasi ang dudumi ng isip nila. Akala mo’y hindi nakipag-holding hands noong mga bata.”</em></p>
+
+		<p><em>“Sila kaya, paano naging tao?”</em></p>
+
+		<p><em>“Nagtinginan lang, nabuntis na.”</em></p>
+		
+		<p>Saka sila nagtawanan. Buti pa sila, kahit paano’y masaya. Ako yata, kahit sa paglilibang ay mga teachers ko pa rin ang nakikita. Sobra na ‘to. Bakit ba ayaw nilang makakita ng katotohanang iba kaysa sa kinagisnan nila. Bakit ba kasi gusto nilang maging kamukha nilang lahat ang tao sa mundo. Dahil ba sa kanilang palagay ay sila ang nakadiskubre ng mina ng talino at tama, kaya wala nang natira sa amin para diskubrihin? Pero hindi ba yung tinatawag nilang expertise, yung dalawampung taon sa serbisyo, ang ibig lang sabihin, isang taon karanasang pinatagal ng dalawampung taon?</p>
+
+		<p>Ngayon ko lang naisip, kung buhay siguro si Beethoven at kukuha ng eksamen sa eskuwelahan, kahit bilang estudyante o teacher ay tiyak na hindi siya tatanggapin. Philiphine School for Science and Technology ito, ang eskuwelahan ng mga magiging scientist balang araw, tapos pakikitunguhan at ituturing na tao ang isang kung sinong bukod sa tamad magbihis, madalang pang maligo?</p>
+
+		<p>Si Einstein? Henyo ‘yon, kaya lang hindi nagsusuklay. Kick-out din siya. Bawal sa school ang mahabang buhok. Tiyak na pagsasabihan siya Mr. Discipline ng <em>“Comply with school requirements. Maximum tolerable haircut please.”</em> Ibig sabihin noo’y ahitan ang batok. Gawing korteng kutsarita ang tuktok.</p>
+
+		<p>Si Hemingway kaya? Hindi rin pwede, mabisyong tao ‘yan. Bawal ang lasenggo sa klase. E Si Maximum Gorky, ang greater Russian writer para kay Chekhov at Tolstoy, pwede kayang magturo ng comparative literature dito? Sa palagay ko’y hindi rin. Bukod sa wala silang unit sa English ay wala rin silang diploma sa Education.</p>
+
+		<p>Si Kristo kaya kung mabubuhay ulit at magpunta sa Science? Maestro daw siya kahit walang M.A. at Ph.D. Papasukin kaya sa gate pa lang? Hindi pwede, kung makasalubong siya roon ni Mrs. Moral Character o ni Mrs. Glesing, baka ma-shock pa ang mga ito. Palagay ko, ganito ang sasabihin nila. <em>“Imagine kay lakas ng loob ang bastos naman ng appearance. Long hair, hindi nag-aahit, tapos nakasandalyas pa. Maano kung anak siya ng Diyos, wala naman siyang sense of de-quo-rum.”</em> Saka kung magsermon dito si Christ, baka mabuko lang siya ng <em>“Who is your authority, where is your data, behavioralism na ang trend ngayon sa West, bakit hindi ka makigaya.”</em> Siguro kaya sa sabsaban na lang ang napiling birth place niya, dahil kung sa science siya ipapanganak, mababago ang kasaysayan ng Kristiyanismo sa mundo.</p>
+
+		<p>Ay, sense of propriety at de-quo-rum, talagang nakatataranta. Clean cut (pagsuklayin mo si Einstein). White polo shirt at black pants (pagdisentihin mo si kristo). Naiisip ko tuloy kung propriety din ‘yung tawag sa mga teacher kung nakadamit civilian sila kapag Miyerkules. ‘Yun bang parang a-attend sila ng party. ‘Yun bang ang tipo ng tela ay mapapansin agad at mapapagsabihang <em>“Ay, ang ganda, saan mo mabili? Siguro ang mahal ano?”</em> Na sasagutin naman ng kausap ng <em>“Mura ‘lang yan, siento isang yarda (walong dolyar na ang katumbas ng piso). Christian Dior, original yan, hindi gawang Rustan’s.”</em> At para talaga mapansin, kailangan humahalimuyak din sila sa bango. ‘Yun parang painting (pa-surreal). At saka tatambakan ng brilyante ang tenga, leeg, dibdib, braso at mga daliri. Sa kanilang “ganda” at “ningning” para kang nakakita ng X’mas tree sa isang mahal na araw. ‘Yun ang proper sa kanila.</p>
+
+		<p>Kung sa bagay, hindi na nila maaanino ‘yon. Noong gabing nahuli kami ni Tess ni Mrs. English, noon ko lang napansin ang ayos ni Kristo. Ininsulto raw ito ng mga Hudyo kaya ipinako ng hubo sa krus. Pero naiinsulto sa hubo ang mga Mrs. Moral Character, Mrs. English, Mr. Mathematician at Mr. Discipline at kanilang mga katribo. Kaya siguro nila tinakpan ang kahubdan ni Kristo ng pelus na nangingintab sa dami ng borloloy. Si Virgin Mary ay asawa daw ng isang hamak na karpintero, pero sa bikas niya ngayon ay mistulang peacock at X’mas tree na rin siya. Pati nga ang kanyang luha ay ginawang perlas.</p>
+
+		<p>Ang hindi nila maging kamukha ay agad nilang pinapansin. Ang taong naniniwala sa sarili ang gusto nilang lapastanganin. Sino nga ba naman si Jojo sa kanila na <em>“isang kung sino lang.”</em> Noon kayang mga estudyante pa sila, nakapasa kaya sila sa Science? Scholar din kaya sila? Pero bakit naging teacher lang sila sa loob ng mahabang panahon? Iyon lang kaya ang alam nila sa buhay, ang magturo? Para silang hindi naging bata. Para bang nang ipanganak sila’y alam na nila ang lahat ng bagay. Baka akala nila’y biru-biro ang maging estudyante. ‘Yun kayang conduct nila sa klase noong araw ay panay uno? Kung talagang hindi sila nagkakamali, dapat itong ireport agad sa Santo Papa sa Roma. Nasa Pilipinas lamang pala ang mga living saints.</p>
+
+		<p>Alin na lang kaya ang pwedeng pakialaman? Saan kaya puwedeng maging bida sa mundo? Buti pa sa referendum, kasali kami. Alin kaya ang mahalaga, ang kapalaran ng Pilipinas pwedeng isugal, pero kung sino ang mas seksi, si Alma Moreno o si Elizabeth Oropesa ay hindi namin pwedeng pagpasiyahan. <em>“For adults”</em> lang kasi yon.</p>
+		
+		<p>Ops. Nakadi-jingle mag-isip. ‘Yung barkada, iba na ang usapan</p>
+
+		<p><em>“Lagyan kaya natin ng thumbtacks ‘yung upuan ni Mrs. English?”</em></p>
+
+		<p><em>“Di aaray ‘yun, pero pag naalala ‘yung poise n’ya, sasabihing, oh, I mean outch!”</em></p>
+
+		<p><em>“HI hi hi hi.”</em></p>
+
+		<p>Buti pa sila at nakukuhang ngumisngis. Ako kaya, kangino puwedeng magreklamo? Sulatan ko kaya si Valencia? Baka naman sagutin ako nito ng <em>“Uminom ka na lang ng kape.”</em> Si Marcos kaya? Santambak ang problema nito sa buhay, biro mong problemahin nito pati kapalaran ng Pilipinas, tapos ipasasagot pa ito sa kanya sa kasaysayan balang araw, paano ako nito mapapansin? Magreport kaya ako kay Carter, issue rin ito ng human rights, ang kapalarang ng mga sinadistang estudyante, pero mahirap namang umingles. Saka interesado lang ito sa giyera na naluluma sila.</p>
+
+		<p>Sa Diyos na lang kaya ako susulat? Pero nasa lahat ng lugar at sulok daw ito, kaya tiyak na alam na niya ang problema ko. Bakit nga pala sa sermon on the mount, wala ‘yung <em>“Blessed are the poor students for they shall inherit….”</em> Siguro dahil wala na siyang langit o lupang pwede pang ipamana sa iba.</p>
+
+		<p>Ayaw kong maging Minyong. Kailangang magsalita na ako baka ako mabaliw. Ayaw kong maging robot, ayaw kong maging bato. Hindi baleng drop-out, basta tao lang ako. Maliit ang comfort room kung doon ko isusulat ang aking mga sumbong. Marami na noong nauna. <em>“What you’re holding now is the future of the Fatherland.”</em> <em>“If you can reach this high, you shall be great.”</em> <em>“Ibagsak ang pasismo.”</em> <em>“LABAN.”</em> <em>“Putang‘na n’yo.”</em> <em>“Alpha Phi Omega.”</em> <em>“Wanted pen pal.”</em></p>
+
+		<p>Magrereklamo rin ako sa pader kung kailangan, hanggang may makabasa at makarinig ng aking sumbong. Pero sa ngayon, idi-jingle ko na lang muna ang sama ng loob.</p>
+		
+  </article>
+
+  <footer>
+    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@www.soquincy.qzz.io">hello@www.soquincy.qzz.io</a>
+  </footer>
+
+</body>
+</html>
