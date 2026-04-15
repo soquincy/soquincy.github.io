@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"Free" Philippines Minecraft Hosting? Mostly Fake. — Quincy So</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e0ddd6;
+      --accent: #1a1a1a;
+      --card-bg: #f2f0eb;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Lora', serif;
+      --max-w: 720px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--fg); }
+
+    /* ARTICLE WRAPPER */
+    article {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* HEADER */
+    .article-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--fg);
+    }
+
+    .article-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-header .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .article-header .byline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* BODY TEXT */
+    p { margin-bottom: 1.2rem; }
+
+    a { color: var(--fg); }
+    a:hover { opacity: 0.6; }
+
+    /* HEADINGS */
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 2.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* IMAGES */
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    /* LISTS */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    /* SCORE CARD */
+    .score-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+    }
+
+    .score-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-card .score-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .score-card .score-row:last-child { border-bottom: none; }
+
+    .score-card .score-row.total {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      border-top: 2px solid var(--fg);
+      border-bottom: none;
+    }
+
+    .score-card .score-row span:last-child {
+      font-weight: 700;
+    }
+
+    /* NOTICE BOX */
+    .notice {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* FINAL SCOREBOARD */
+    .scoreboard {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      margin: 1.5rem 0;
+    }
+
+    .scoreboard th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--fg);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .scoreboard td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .scoreboard tr:last-child td { border-bottom: none; }
+
+    .tag-yes {
+      background: #d4edda;
+      color: #1a5c2a;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-no {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-maybe {
+      background: #fff3cd;
+      color: #856404;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* GLOSSARY */
+    .glossary dt {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .glossary dd {
+      margin-left: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-display);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="http://status.soquincy.qzz.io" target="_blank" rel="noopener">Projects Status</a>
+    <a href="/quincy-five-free-hosting-tests">"Free" PH Minecraft Hosting? Mostly Fake.</a>
+  </nav>
+
+  <article>
+
+    <img class="article-img" src="phenomena.png" alt="Minecraft Survival Server Background" />
+    
+    <header class="article-header">
+      <h1>2WKPLAYERS Privacy Policy Statement</h1>
+      <p class="subtitle">What data do we take?</p>
+      <p class="byline">Last Updated: 2026-04-15</p>
+    </header>
+
+        <h2>1. Discord Bot Privacy Policy</h2>
+
+    <p>This bot collects only the minimum data required to operate its features.</p>
+
+    <h3>Data Collected</h3>
+    <ul>
+      <li>Discord usernames and user IDs</li>
+      <li>Messages submitted through ticket systems</li>
+    </ul>
+
+    <h3>Purpose</h3>
+    <ul>
+      <li>To manage support tickets and respond to user requests</li>
+      <li>To maintain moderation and server organization</li>
+    </ul>
+
+    <h3>Data Access</h3>
+    <p>Data is accessible only to authorized staff handling tickets and moderation.</p>
+
+    <h3>Data Retention</h3>
+    <p>Data is stored only as long as necessary for ticket resolution and moderation logs.</p>
+
+    <h3>Data Sharing</h3>
+    <p>No data is sold or shared with third parties.</p>
+
+    <h3>User Rights</h3>
+    <p>You may request deletion of your data by contacting server staff.</p>
+
+    <div class="notice">
+      By using the bot, you agree to this data handling.
+    </div>
+
+    <hr />
+
+    <h2>2. Minecraft Server Privacy Policy</h2>
+
+    <p>This server collects limited technical and gameplay-related data required for operation and moderation.</p>
+
+    <h3>Data Collected</h3>
+    <ul>
+      <li>IP addresses (for security, GeoIP features, and IP bans)</li>
+      <li>Minecraft UUIDs and usernames</li>
+      <li>Private messages (/msg, /tell, /w) which may be logged</li>
+    </ul>
+
+    <h3>Purpose</h3>
+    <ul>
+      <li>To maintain server security and prevent abuse</li>
+      <li>To enforce rules and investigate harassment or cyberbullying</li>
+      <li>To provide features such as GeoIP-based functionality</li>
+    </ul>
+
+    <h3>Data Access</h3>
+    <p>Data is accessible only to authorized administrators and moderators.</p>
+
+    <h3>Data Retention</h3>
+    <p>Logs and data are retained only as long as necessary for moderation and server operation.</p>
+
+    <h3>Data Sharing</h3>
+    <p>No data is sold or shared with external parties unless required by law.</p>
+
+    <h3>Third-Party Integrations</h3>
+    <p>
+      The server uses plugins such as EssentialsX and DiscordSRV, which may process data as part of their functionality.
+    </p>
+
+    <h3>User Rights</h3>
+    <p>You may request information about or deletion of your data by contacting server staff.</p>
+
+    <div class="notice">
+      By joining the server, you consent to this data collection and usage.
+    </div>
+
+  </article>
+  </article>
+
+  <footer>
+    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@www.soquincy.qzz.io">hello@www.soquincy.qzz.io</a>
+  </footer>
+
+</body>
+</html>
