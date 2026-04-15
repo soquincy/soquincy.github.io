@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2WKPLAYERS Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e0ddd6;
+      --accent: #1a1a1a;
+      --card-bg: #f2f0eb;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Lora', serif;
+      --max-w: 720px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding: 1.1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--fg); }
+
+    /* ARTICLE WRAPPER */
+    article {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* HEADER */
+    .article-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--fg);
+    }
+
+    .article-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-header .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .article-header .byline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* BODY TEXT */
+    p { margin-bottom: 1.2rem; }
+
+    a { color: var(--fg); }
+    a:hover { opacity: 0.6; }
+
+    /* HEADINGS */
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 2.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* IMAGES */
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.75rem 0;
+      border: 1px solid var(--border);
+    }
+
+    /* LISTS */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    /* SCORE CARD */
+    .score-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+    }
+
+    .score-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-card .score-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .score-card .score-row:last-child { border-bottom: none; }
+
+    .score-card .score-row.total {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      border-top: 2px solid var(--fg);
+      border-bottom: none;
+    }
+
+    .score-card .score-row span:last-child {
+      font-weight: 700;
+    }
+
+    /* NOTICE BOX */
+    .notice {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* FINAL SCOREBOARD */
+    .scoreboard {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      margin: 1.5rem 0;
+    }
+
+    .scoreboard th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--fg);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .scoreboard td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .scoreboard tr:last-child td { border-bottom: none; }
+
+    .tag-yes {
+      background: #d4edda;
+      color: #1a5c2a;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-no {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag-maybe {
+      background: #fff3cd;
+      color: #856404;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* GLOSSARY */
+    .glossary dt {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .glossary dd {
+      margin-left: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-display);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <h1>2WKPLAYERS Bot Terms of Service</h1>
+      <p class="subtitle">Rules for using the Discord bot</p>
+      <p class="byline">Last Updated: 2026-04-15</p>
+    </header>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By using this Discord bot, you agree to these Terms of Service. If you do not agree, you must stop using the bot.
+    </p>
+
+    <h2>2. Use of the Bot</h2>
+
+    <h3>Allowed Use</h3>
+    <ul>
+      <li>Using commands as intended</li>
+      <li>Submitting tickets through the proper system</li>
+      <li>Following server rules while interacting with the bot</li>
+    </ul>
+
+    <h3>Prohibited Use</h3>
+    <ul>
+      <li>Spamming, abusing commands, or exploiting bugs</li>
+      <li>Attempting to bypass restrictions or security systems</li>
+      <li>Using the bot for harassment, hate, or illegal activity</li>
+    </ul>
+
+    <h2>3. Moderation and Enforcement</h2>
+    <p>
+      Server staff may restrict or revoke access to the bot at any time if these terms or server rules are violated.
+    </p>
+
+    <h2>4. Data Usage</h2>
+    <p>
+      Use of the bot involves limited data collection as described in the Privacy Policy.
+    </p>
+
+    <h2>5. Service Availability</h2>
+    <p>
+      The bot is provided "as is" with no guarantees of uptime, reliability, or continuous availability.
+    </p>
+
+    <h2>6. Changes to the Service</h2>
+    <p>
+      Features, commands, or functionality may be modified or removed at any time without notice.
+    </p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>
+      The bot owner is not responsible for any damages, losses, or issues resulting from use of the bot.
+    </p>
+
+    <h2>8. Termination</h2>
+    <p>
+      Access to the bot may be terminated at any time for any reason, including violations of these terms.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      For concerns or requests, contact server staff through the designated support channels.
+    </p>
+
+    <div class="notice">
+      Continued use of the bot means you accept these Terms of Service.
+    </div>
+
+  </article>
+
+  <footer>
+    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@www.soquincy.qzz.io">hello@www.soquincy.qzz.io</a>
+  </footer>
+
+</body>
+</html>
