@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Privacy Policies for The 2ᴡᴋMCᴘʜᴀꜱᴇ Server</h1>
+
+```
+<section>
+  <h2>1. Bot Privacy Policy</h2>
+
+  <h3>Data Collected</h3>
+  <ul>
+    <li>Discord usernames and user IDs (for ticket handling and identification)</li>
+    <li>Messages sent within bot-managed systems (e.g., tickets)</li>
+  </ul>
+
+  <h3>Purpose</h3>
+  <ul>
+    <li>Process and manage support tickets</li>
+    <li>Identify users interacting with the bot</li>
+    <li>Maintain moderation and support records</li>
+  </ul>
+
+  <h3>Access</h3>
+  <p>Server administrators and authorized staff only.</p>
+
+  <h3>Retention</h3>
+  <ul>
+    <li>Stored only as long as needed for support and moderation</li>
+    <li>May be deleted upon request, unless required for ongoing investigations</li>
+  </ul>
+
+  <h3>Third Parties</h3>
+  <p>Data is processed through Discord infrastructure.</p>
+</section>
+
+<section>
+  <h2>2. Minecraft Server Privacy Policy</h2>
+
+  <h3>Data Collected</h3>
+  <ul>
+    <li>IP addresses (used for GeoIP features and IP-based moderation)</li>
+    <li>UUIDs (used for player identification and account integrity)</li>
+    <li>Usernames</li>
+    <li>Private messages (/msg, /w) for moderation review</li>
+  </ul>
+
+  <h3>Purpose</h3>
+  <ul>
+    <li>Enforce rules (bans, anti-abuse, anti-alt detection)</li>
+    <li>Provide GeoIP-based features (via EssentialsX GeoIP)</li>
+    <li>Investigate harassment, cheating, or other violations</li>
+  </ul>
+
+  <h3>Access</h3>
+  <p>Server administrators and authorized moderators only. Message logs are only accessed when necessary for rule enforcement.</p>
+
+  <h3>Retention</h3>
+  <ul>
+    <li>Data is stored as long as required for server operation and moderation</li>
+    <li>May be retained longer in cases involving rule violations</li>
+  </ul>
+
+  <h3>Security</h3>
+  <p>Data is stored on the server panel and protected by administrative access controls.</p>
+</section>
+
+<section>
+  <p><strong>By using the bot or joining the server, you agree to this data collection and usage.</strong></p>
+</section>
+```
+
+  </main>
+
+</body>
+</html>
