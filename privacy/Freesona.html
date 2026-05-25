@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumi — Privacy Policy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/editorial.css" />
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <h1>Sumi Privacy Policy</h1>
+      <p class="subtitle">What data is collected, how it is used, and who receives it</p>
+      <p class="byline">Last Updated: 2026-05-24</p>
+    </header>
+
+    <section class="notice">
+      <strong>Definitions</strong><br />
+      Throughout this policy:
+      <ul>
+        <li><strong>"Sumi"</strong>, <strong>"the bot"</strong>, <strong>"we"</strong>, and <strong>"us"</strong> refer to the Sumi Discord bot and its operator.</li>
+        <li><strong>"You"</strong> and <strong>"your"</strong> refer to the Discord user interacting with the bot.</li>
+        <li><strong>"Server administrators"</strong> refers to Discord server staff with permission to manage the bot.</li>
+        <li><strong>"Third-party services"</strong> refers to external APIs and services used by the bot to process requests.</li>
+      </ul>
+    </section>
+
+    <h2>1. Overview</h2>
+    <p>
+      This Privacy Policy explains what information Sumi collects, why it is collected, how it is stored, and who it may be shared with for officially operated instances.
+    </p>
+
+    <p>
+      By using Sumi, you agree to the collection and use of data as described in this policy.
+    </p>
+
+    <section class="notice">
+      <strong>Project Scope</strong><br />
+      Sumi is based on the public open-source project <strong>Freesona</strong>. This Privacy Policy only applies to bot instances operated directly by the project's maintainer and operator.
+      <br /><br />
+      Because Freesona is publicly available, third parties may host their own independent instances with different configurations, logging practices, memory systems, hosting providers, or privacy policies.
+      <br /><br />
+      If you are interacting with a Freesona-based bot not operated by the official maintainer, this policy may not apply to that instance.
+    </section>
+
+    <h2>2. Information Collected</h2>
+
+    <h3>Automatically Processed Information</h3>
+    <p>
+      Sumi processes certain Discord data in order to function properly:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Discord user IDs</strong><br />
+        Used to associate memory, preferences, and interactions with the correct user.
+      </li>
+
+      <li>
+        <strong>Discord server (guild) IDs</strong><br />
+        Used to separate settings, memory, and configuration between servers.
+      </li>
+
+      <li>
+        <strong>Message content</strong><br />
+        Messages sent to the bot may be processed to generate AI responses and maintain conversation context.
+      </li>
+
+      <li>
+        <strong>Display names</strong><br />
+        Used to identify participants in multi-user conversations.
+      </li>
+    </ul>
+
+    <h3>Optionally Stored Information</h3>
+
+    <ul>
+      <li>
+        <strong>Long-term memory facts</strong><br />
+        If long-term memory is enabled, Sumi may extract information from conversations such as preferences, interests, or recurring details to personalise future responses.
+      </li>
+
+      <li>
+        <strong>RSS feed configuration</strong><br />
+        Feed names and URLs added by server administrators are stored for server functionality.
+      </li>
+    </ul>
+
+    <h2>3. How Information Is Used</h2>
+
+    <p>Sumi uses collected information to:</p>
+
+    <ul>
+      <li>Generate context-aware AI responses</li>
+      <li>Maintain temporary conversation memory during active sessions</li>
+      <li>Personalise future responses if long-term memory is enabled</li>
+      <li>Store server-specific settings and configuration</li>
+      <li>Operate features such as RSS feeds, automation, and moderation-related functions</li>
+    </ul>
+
+    <h2>4. Data Storage and Retention</h2>
+
+    <h3>Short-Term Memory</h3>
+    <p>
+      Temporary conversation memory is stored in active bot memory while the bot is running. This memory may be cleared:
+    </p>
+
+    <ul>
+      <li>When the bot restarts</li>
+      <li>When a server administrator uses <code>/clearmemory</code></li>
+      <li>When conversation context expires internally</li>
+    </ul>
+
+    <h3>Long-Term Memory</h3>
+    <p>
+      Long-term memory data is stored locally in <code>memory.json</code> on the bot's host server. This data remains stored until manually removed by the bot operator.
+    </p>
+
+    <h3>Configuration Data</h3>
+    <p>
+      Server configuration is stored in <code>config.json</code> and persists across restarts unless manually deleted.
+    </p>
+
+    <h2>5. Third-Party Services</h2>
+
+    <p>
+      Some requests require sending data to external services in order for features to work correctly.
+    </p>
+
+    <p>
+      Depending on the command or interaction, your message content or uploaded files may be transmitted to:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Google Gemini</strong><br />
+        Used for AI response generation and optional memory extraction.
+      </li>
+
+      <li>
+        <strong>Wolfram Alpha</strong><br />
+        Used for mathematics and computational queries.
+      </li>
+
+      <li>
+        <strong>Google Custom Search</strong><br />
+        Used for web search functionality.
+      </li>
+
+      <li>
+        <strong>MVSEP</strong><br />
+        Used for audio separation requests involving uploaded audio files.
+      </li>
+    </ul>
+
+    <p>
+      These third-party services operate under their own privacy policies and data handling practices. Sumi does not control how external providers process transmitted data.
+    </p>
+
+    <p>
+      Sumi does not sell user data.
+    </p>
+
+    <h2>6. Data Security</h2>
+
+    <p>
+      Data is stored on the bot hosting provider, such as Railway or an equivalent hosting platform.
+    </p>
+
+    <p>
+      Reasonable precautions are taken to protect stored data, but no online system can guarantee complete security. Use of the bot is at your own risk.
+    </p>
+
+    <h2>7. Your Rights and Data Removal</h2>
+
+    <p>
+      You may request removal of stored data at any time.
+    </p>
+
+    <ul>
+      <li>Server administrators may clear temporary session memory using <code>/clearmemory</code></li>
+      <li>Long-term memory removal requires manual action by the bot operator</li>
+      <li>You may contact the bot operator through the server's support channels for data requests</li>
+    </ul>
+
+    <h2>8. Children's Privacy</h2>
+
+    <p>
+      Sumi is not intended for use by individuals under the age of 13, or below the minimum age required by applicable law in their jurisdiction.
+    </p>
+
+    <p>
+      If you believe data belonging to a minor has been collected, contact the bot operator immediately.
+    </p>
+
+    <h2>9. Changes to This Policy</h2>
+
+    <p>
+      This Privacy Policy may be updated at any time without prior notice.
+    </p>
+
+    <p>
+      Continued use of Sumi after changes are published constitutes acceptance of the revised policy.
+    </p>
+
+    <h2>10. Contact</h2>
+
+    <p>
+      For questions, concerns, or data-related requests, contact the bot operator through the designated support channels provided in the Discord server.
+    </p>
+
+    <div class="notice">
+      By using Sumi, you acknowledge that you have read and understood this Privacy Policy.
+    </div>
+  </article>
+
+  <footer>
+    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp;
+    <a href="mailto:hello@soquincy.qzz.io">hello@soquincy.qzz.io</a>
+  </footer>
+</body>
+</html>
