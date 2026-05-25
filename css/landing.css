@@ -3,10 +3,12 @@
   --fg: #f0f0f0;
   --accent: #c8f540;
   --muted: #888;
+
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Host Grotesk', sans-serif;
 }
 
+/* RESET */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +19,7 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 400; /* FIX: was 700 causing Firefox heaviness */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -78,6 +80,7 @@ h1 span {
 .contact {
   font-size: 0.85rem;
   color: var(--muted);
+  font-weight: 400;
 }
 
 .contact a {
