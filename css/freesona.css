@@ -1,5 +1,5 @@
 /* ============================================================
-   Freesona Landing Styles (Fixed)
+   Freesona Landing Styles
    ============================================================ */
 
 :root {
@@ -14,7 +14,6 @@
 
   --border: rgba(255,255,255,0.08);
 
-  /* unified font system */
   --font-display: "Urbanist", sans-serif;
   --font-body: "Urbanist", sans-serif;
 
@@ -76,35 +75,33 @@ nav {
   align-items: center;
   justify-content: space-between;
 
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .brand {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1rem;
-
   letter-spacing: -0.04em;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .nav-links a {
   font-family: var(--font-display);
-
   font-size: 0.8rem;
   font-weight: 700;
-
   text-transform: uppercase;
   letter-spacing: 0.08em;
-
   color: var(--muted);
-  transition: 0.2s ease;
+  transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -114,17 +111,14 @@ nav {
 /* ── HERO ────────────────────────────────────────────────────── */
 .hero {
   min-height: 92vh;
-
   display: flex;
   align-items: center;
-
   padding: 6rem 2rem;
 }
 
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-
   width: 100%;
 
   display: grid;
@@ -133,32 +127,29 @@ nav {
   align-items: center;
 }
 
+/* hero-copy is just the left column — no terminal inside */
+.hero-copy {
+  min-width: 0;
+}
+
 .eyebrow {
   font-family: var(--font-display);
-
   color: var(--main);
-
   text-transform: uppercase;
   letter-spacing: 0.16em;
-
   font-size: 0.82rem;
   font-weight: 800;
-
   margin-bottom: 1.25rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-
   font-size: clamp(4rem, 10vw, 7rem);
   line-height: 0.92;
-
   letter-spacing: -0.08em;
-
   margin-bottom: 1.5rem;
 }
 
-/* FIXED gradient text */
 .hero h1 .gradient {
   background: linear-gradient(90deg, var(--main), var(--accent));
   -webkit-background-clip: text;
@@ -168,8 +159,7 @@ nav {
 }
 
 .hero p {
-  max-width: 720px;
-
+  max-width: 560px;
   font-size: 1.12rem;
   color: #d1d1d6;
 }
@@ -178,29 +168,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
   margin-top: 2.5rem;
-}
-
-/* ── STATUS BADGE ────────────────────────────────────────────── */
-.status {
-  display: inline-block;
-
-  margin-top: 1.25rem;
-
-  padding: 0.4rem 0.8rem;
-
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-
-  border: 1px solid var(--border);
-  border-radius: 999px;
-
-  background: rgba(255,255,255,0.03);
 }
 
 /* ── BUTTONS ─────────────────────────────────────────────────── */
@@ -208,16 +176,12 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 0.95rem 1.35rem;
-
   border-radius: 999px;
-
   font-family: var(--font-display);
   font-size: 0.88rem;
   font-weight: 800;
-
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .button:hover {
@@ -238,13 +202,11 @@ nav {
 /* ── TERMINAL ────────────────────────────────────────────────── */
 .terminal {
   background: #111114;
-
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 1.5rem;
-
   padding: 2rem;
-
   overflow-x: auto;
+  min-width: 0;
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.02),
@@ -259,7 +221,6 @@ nav {
   font-family: monospace;
   font-size: 0.95rem;
   line-height: 1.7;
-
   color: #e8e8ea;
 }
 
@@ -283,18 +244,14 @@ section {
 
 .section-title {
   font-family: var(--font-display);
-
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.05;
-
   letter-spacing: -0.05em;
-
   margin-bottom: 1rem;
 }
 
 .section-description {
   max-width: 760px;
-
   color: var(--muted);
   font-size: 1.05rem;
 }
@@ -302,21 +259,16 @@ section {
 /* ── FEATURE GRID ────────────────────────────────────────────── */
 .feature-grid {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
   gap: 1.5rem;
 }
 
 .feature-card {
   background: rgba(255,255,255,0.03);
-
   border: 1px solid var(--border);
   border-radius: 1.25rem;
-
   padding: 1.5rem;
-
-  transition: 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .feature-card:hover {
@@ -326,10 +278,8 @@ section {
 
 .feature-card h3 {
   font-family: var(--font-display);
-
   font-size: 1.05rem;
   font-weight: 800;
-
   margin-bottom: 0.8rem;
 }
 
@@ -340,23 +290,17 @@ section {
 
 /* ── QUOTE BLOCK ─────────────────────────────────────────────── */
 .quote-block {
-  background:
-    linear-gradient(135deg, rgba(255,180,29,0.08), rgba(180,29,255,0.08));
-
+  background: linear-gradient(135deg, rgba(255,180,29,0.08), rgba(180,29,255,0.08));
   border: 1px solid rgba(255,255,255,0.08);
   border-left: 4px solid var(--main);
-
   border-radius: 1.25rem;
-
   padding: 2rem;
-
   max-width: 860px;
 }
 
 .quote-block p {
   font-size: 1.2rem;
   line-height: 1.6;
-
   margin: 0;
 }
 
@@ -369,14 +313,10 @@ section {
 /* ── FOOTER ──────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
-
   padding: 2rem;
-
   text-align: center;
-
   font-family: var(--font-display);
   font-size: 0.8rem;
-
   color: var(--muted);
 }
 
@@ -389,25 +329,40 @@ footer a:hover {
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+/* Tablet */
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .hero {
     min-height: auto;
-    padding-top: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
-  .terminal {
-    margin-top: 1rem;
+  .hero p {
+    max-width: 100%;
   }
 }
 
+/* Mobile */
 @media (max-width: 640px) {
   .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    /* keep row layout; brand left, links right — wrap if needed */
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
   }
 
   .hero,
@@ -416,7 +371,28 @@ footer a:hover {
     padding-right: 1.25rem;
   }
 
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 18vw, 4.5rem);
+  }
+
+  .terminal {
+    padding: 1.25rem;
+  }
+
+  .terminal code {
+    font-size: 0.82rem;
+  }
+
+  .quote-block {
+    padding: 1.25rem;
+  }
+
+  .quote-block p {
+    font-size: 1rem;
   }
 }
