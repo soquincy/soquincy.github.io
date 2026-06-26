@@ -5,7 +5,7 @@
 
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet" />
    ============================================================ */
 
 
@@ -68,9 +68,37 @@ nav {
   padding: 1.1rem 2rem;
   border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
+  align-items: center;
 }
 
-nav a {
+/* Site title */
+.site-title {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--fg);
+  margin-right: 1rem;
+}
+
+.site-title:hover {
+  opacity: 1;
+}
+
+.site-main {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.site-accent {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Everything except the title */
+nav a:not(.site-title) {
   color: var(--muted);
   text-decoration: none;
   font-family: var(--font-display);
@@ -81,7 +109,7 @@ nav a {
   transition: color 0.2s;
 }
 
-nav a:hover {
+nav a:not(.site-title):hover {
   color: var(--fg);
 }
 
