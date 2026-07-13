@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Redirecting...">
+  <main style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem;">
+    <h1 style="font-size: clamp(2rem, 6vw, 4rem); font-weight: 800; margin-bottom: 1rem;">Redirecting...</h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">You are being redirected to the KAPA Community Ministry International page on Notion.</p>
+    <p style="color: var(--muted);">If you are not redirected automatically, <a href="https://www.notion.so/KAPA-COMMUNITY-MINISTRY-INTERNATIONAL-3588dcc7ae3780c29b32c24d9620e2c8?source=copy_link" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">click here</a>.</p>
+  </main>
+</BaseLayout>
+
+<script>
+  // Redirect after a short delay
+  setTimeout(() => {
+    window.location.href = "https://www.notion.so/KAPA-COMMUNITY-MINISTRY-INTERNATIONAL-3588dcc7ae3780c29b32c24d9620e2c8?source=copy_link";
+  }, 1000);
+</script>
+
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --fg: #f0f0f0;
+    --accent: #c8f540;
+    --muted: #888;
+  }
+</style>

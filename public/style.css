@@ -1,0 +1,247 @@
+:root {
+  --bg: #0e0e0e;
+  --fg: #f0f0f0;
+  --accent: #c8f540;
+  --muted: #888;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Host Grotesk', sans-serif;
+}
+
+/* Legal pages (light theme) */
+:root.legal {
+  --bg: #faf9f6;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --border: #e0ddd6;
+  --accent: #1a1a1a;
+  --card-bg: #f2f0eb;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Lora', serif;
+  --max-w: 720px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Legal pages nav override */
+.legal nav {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 2rem;
+}
+
+.legal nav a {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.legal nav a:hover {
+  color: var(--fg);
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 640px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  color: #444;
+  border-top: 1px solid #1a1a1a;
+}
+
+/* Legal pages footer override */
+.legal footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-display);
+}
+
+.legal footer a {
+  color: var(--muted);
+}
+
+.legal footer a:hover {
+  color: var(--fg);
+}
+
+/* Legal pages article styles */
+.legal article {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.legal .article-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--fg);
+}
+
+.legal .article-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.legal .article-header .subtitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.legal .article-header .byline {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Legal pages body text */
+.legal p {
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.legal a {
+  color: var(--fg);
+}
+
+.legal a:hover {
+  opacity: 0.6;
+}
+
+/* Legal pages headings */
+.legal h2 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin: 2.5rem 0 0.75rem;
+  line-height: 1.2;
+}
+
+.legal h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Legal pages lists */
+.legal ul,
+.legal ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.legal li {
+  margin-bottom: 0.35rem;
+  font-weight: 400;
+}
+
+/* Notice box */
+.legal .notice {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Divider */
+.legal hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
