@@ -4,6 +4,6 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://soquincy.github.io',
+  site: 'https://soquincy.qzz.io',
   integrations: [mdx()],
 });
