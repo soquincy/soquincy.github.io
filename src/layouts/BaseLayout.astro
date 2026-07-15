@@ -22,6 +22,7 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="/css/editorial.css" />
     </>
   )}
   <style is:global>
@@ -34,18 +35,6 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       --card-bg: #1a1a1a;
       --font-display: 'Plus Jakarta Sans', sans-serif;
       --font-body: 'Host Grotesk', sans-serif;
-      --max-w: 720px;
-    }
-
-    :root[data-theme="light"] {
-      --bg: #faf9f6;
-      --fg: #1a1a1a;
-      --muted: #666;
-      --border: #e0ddd6;
-      --accent: #1a1a1a;
-      --card-bg: #f2f0eb;
-      --font-display: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Lora', serif;
       --max-w: 720px;
     }
 
@@ -118,22 +107,6 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       text-align: left; /* left-aligned text */
     }
 
-    /* Light & Editorial-dark theme (editorial style): article wrapper centered */
-    :root[data-theme="light"] main,
-    :root[data-theme="editorial-dark"] main {
-      justify-content: flex-start;
-      align-items: stretch;
-      max-width: var(--max-w);
-      margin: 0 auto; /* centered container */
-    }
-
-    :root[data-theme="light"] main > article,
-    :root[data-theme="editorial-dark"] main > article {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      width: 100%;
-    }
-
     /* Dark theme home page styles */
     :root[data-theme="dark"] main h1 {
       font-family: var(--font-display);
@@ -171,275 +144,7 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       color: var(--accent);
     }
 
-    /* Light & Editorial-dark theme legal page styles */
-    :root[data-theme="light"] main .article-header,
-    :root[data-theme="editorial-dark"] main .article-header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--fg);
-    }
-
-    :root[data-theme="light"] main .article-header h1,
-    :root[data-theme="editorial-dark"] main .article-header h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-    }
-
-    :root[data-theme="light"] main .article-header .subtitle,
-    :root[data-theme="editorial-dark"] main .article-header .subtitle {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    :root[data-theme="light"] main .article-header .byline,
-    :root[data-theme="editorial-dark"] main .article-header .byline {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    :root[data-theme="light"] main p,
-    :root[data-theme="editorial-dark"] main p { margin-bottom: 1.2rem; }
-
-    :root[data-theme="light"] main a,
-    :root[data-theme="editorial-dark"] main a { color: var(--fg); }
-    :root[data-theme="light"] main a:hover,
-    :root[data-theme="editorial-dark"] main a:hover { opacity: 0.6; }
-
-    :root[data-theme="light"] main h2,
-    :root[data-theme="editorial-dark"] main h2 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 800;
-      margin: 2.5rem 0 0.75rem;
-      line-height: 1.2;
-    }
-
-    :root[data-theme="light"] main h3,
-    :root[data-theme="editorial-dark"] main h3 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 2rem 0 0.5rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    :root[data-theme="light"] main ul,
-    :root[data-theme="light"] main ol,
-    :root[data-theme="editorial-dark"] main ul,
-    :root[data-theme="editorial-dark"] main ol {
-      padding-left: 1.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    :root[data-theme="light"] main li,
-    :root[data-theme="editorial-dark"] main li {
-      margin-bottom: 0.35rem;
-    }
-
-    :root[data-theme="light"] main .notice,
-    :root[data-theme="editorial-dark"] main .notice {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 1rem 1.25rem;
-      font-size: 0.9rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    :root[data-theme="light"] main blockquote,
-    :root[data-theme="editorial-dark"] main blockquote {
-      border-left: 3px solid var(--border);
-      padding-left: 1rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    :root[data-theme="light"] main hr,
-    :root[data-theme="editorial-dark"] main hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
-
-    /* ── EDITORIAL: IMAGES ─────────────────────────────────── */
-    :root[data-theme="light"] main .article-img,
-    :root[data-theme="editorial-dark"] main .article-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 1.75rem 0;
-      border: 1px solid var(--border);
-    }
-
-    /* ── EDITORIAL: SCORE CARD ─────────────────────────────── */
-    :root[data-theme="light"] main .score-card,
-    :root[data-theme="editorial-dark"] main .score-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--fg);
-      padding: 1.25rem 1.5rem;
-      margin: 1.75rem 0;
-      font-family: var(--font-display);
-      font-size: 0.88rem;
-    }
-
-    :root[data-theme="light"] main .score-card h4,
-    :root[data-theme="editorial-dark"] main .score-card h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-    }
-
-    :root[data-theme="light"] main .score-card .score-row,
-    :root[data-theme="editorial-dark"] main .score-card .score-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    :root[data-theme="light"] main .score-card .score-row:last-child,
-    :root[data-theme="editorial-dark"] main .score-card .score-row:last-child {
-      border-bottom: none;
-    }
-
-    :root[data-theme="light"] main .score-card .score-row.total,
-    :root[data-theme="editorial-dark"] main .score-card .score-row.total {
-      font-weight: 800;
-      font-size: 1rem;
-      margin-top: 0.4rem;
-      border-top: 2px solid var(--fg);
-      border-bottom: none;
-    }
-
-    :root[data-theme="light"] main .score-card .score-row span:last-child,
-    :root[data-theme="editorial-dark"] main .score-card .score-row span:last-child {
-      font-weight: 700;
-    }
-
-    /* ── EDITORIAL: SCOREBOARD TABLE ───────────────────────── */
-    :root[data-theme="light"] main .scoreboard,
-    :root[data-theme="editorial-dark"] main .scoreboard {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: var(--font-display);
-      font-size: 0.88rem;
-      margin: 1.5rem 0;
-    }
-
-    :root[data-theme="light"] main .scoreboard th,
-    :root[data-theme="editorial-dark"] main .scoreboard th {
-      text-align: left;
-      padding: 0.6rem 0.75rem;
-      border-bottom: 2px solid var(--fg);
-      font-weight: 800;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    :root[data-theme="light"] main .scoreboard td,
-    :root[data-theme="editorial-dark"] main .scoreboard td {
-      padding: 0.55rem 0.75rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    :root[data-theme="light"] main .scoreboard tr:last-child td,
-    :root[data-theme="editorial-dark"] main .scoreboard tr:last-child td {
-      border-bottom: none;
-    }
-
-    /* ── EDITORIAL: STATUS TAGS ────────────────────────────── */
-    :root[data-theme="light"] main .tag-yes,
-    :root[data-theme="editorial-dark"] main .tag-yes {
-      background: #d4edda;
-      color: #1a5c2a;
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    :root[data-theme="light"] main .tag-no,
-    :root[data-theme="editorial-dark"] main .tag-no {
-      background: #f8d7da;
-      color: #721c24;
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    :root[data-theme="light"] main .tag-maybe,
-    :root[data-theme="editorial-dark"] main .tag-maybe {
-      background: #fff3cd;
-      color: #856404;
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    /* ── EDITORIAL: GLOSSARY ───────────────────────────────── */
-    :root[data-theme="light"] main .glossary dt,
-    :root[data-theme="editorial-dark"] main .glossary dt {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-top: 0.9rem;
-    }
-
-    :root[data-theme="light"] main .glossary dd,
-    :root[data-theme="editorial-dark"] main .glossary dd {
-      margin-left: 0;
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    /* ── EDITORIAL: SITE TITLE ─────────────────────────────── */
-    :root[data-theme="light"] nav .site-title,
-    :root[data-theme="editorial-dark"] nav .site-title {
-      text-decoration: none;
-      font-family: var(--font-body);
-      font-size: 1.45rem;
-      font-weight: 700;
-      letter-spacing: normal;
-      text-transform: none;
-      color: var(--fg);
-      margin-right: 1rem;
-    }
-
-    :root[data-theme="light"] nav .site-title:hover,
-    :root[data-theme="editorial-dark"] nav .site-title:hover {
-      opacity: 1;
-    }
-
-    :root[data-theme="light"] nav .site-main,
-    :root[data-theme="editorial-dark"] nav .site-main {
-      font-style: normal;
-      font-weight: 700;
-    }
-
-    :root[data-theme="light"] nav .site-accent,
-    :root[data-theme="editorial-dark"] nav .site-accent {
-      font-style: italic;
-      font-weight: 700;
-    }
-
-    /* Blog prose styles (dark theme) */
+    /* Dark theme blog prose styles */
     :root[data-theme="dark"] main .prose {
       line-height: 1.6;
       font-weight: 400;
@@ -505,34 +210,13 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       color: var(--fg);
     }
 
-    footer .legal-glossary {
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-      opacity: 0.7;
+    footer .legal-link {
+      margin-top: 0.25rem;
+      font-size: 1.1rem;
     }
 
-    footer .legal-glossary dt {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.15rem;
-      color: var(--muted);
-    }
-
-    footer .legal-glossary dd {
-      margin-left: 0;
-      margin-bottom: 0.1rem;
-    }
-
-    footer .legal-glossary dd a {
-      color: var(--muted);
+    footer .legal-link a {
       text-decoration: none;
-    }
-
-    footer .legal-glossary dd a:hover {
-      color: var(--fg);
     }
 
     /* ── THEME TOGGLE BUTTON ──────────────────────────────── */
@@ -585,11 +269,7 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
 
   <footer>
     <p>Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@soquincy.qzz.io">hello@soquincy.qzz.io</a></p>
-    <dl class="legal-glossary">
-      <dt>Legal</dt>
-      <dd><a href="/privacy-policy/freesona">Freesona Privacy Policy</a></dd>
-      <dd><a href="/terms-of-service/freesona">Freesona Terms of Service</a></dd>
-    </dl>
+    <p class="legal-link"><a href="/legal" title="Legal & Glossary">⚖</a></p>
   </footer>
 
   {showThemeToggle && (
