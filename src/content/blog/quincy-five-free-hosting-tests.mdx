@@ -9,7 +9,7 @@ There are dozens of blog posts comparing free Minecraft server hosting. Almost n
 
 I'm a paying Minecraft server user. I know what good hosting looks like. These free platforms don't get extra credit just for existing — they get scored against a real rubric, tested from Davao Oriental, Philippines, on fixed broadband infrastructure that has improved significantly since pre-COVID. Not Manila. Not BGC. A provincial connection that's more representative of where most Filipino players actually are.
 
-> **Note:** Adblock was disabled for the entire testing session. The ad experience is part of the product. I am not in any way affiliated with any of these services and I have not been paid to write this blog.
+<aside class="notice"><strong>Note:</strong> Adblock was disabled for the entire testing session. The ad experience is part of the product. I am not in any way affiliated with any of these services and I have not been paid to write this blog.</aside>
 
 ## The Rubric
 
@@ -31,79 +31,81 @@ Ground rules:
 - All latency results reflect a single ISP on fixed broadband in Davao Oriental. Results will vary across providers and locations. This is one data point, not a verdict on Philippine internet as a whole
 - Adblock disabled for all testing, including the control panel — not just the landing page
 
-> **Methodology Disclaimer:** The infrastructure argument for excluding SEA is weaker than it was five years ago. Davao Oriental's internet has caught up. The problem isn't always on the user's end anymore.
+<aside class="notice"><strong>Methodology Disclaimer:</strong> The infrastructure argument for excluding SEA is weaker than it was five years ago. Davao Oriental's internet has caught up. The problem isn't always on the user's end anymore.</aside>
 
 ## Glossary
 
-**TPS (Ticks Per Second)**
-Minecraft's clock runs at 20 ticks per second. Each tick processes everything on the server — movement, mobs, redstone, weather. Stable 20.00 TPS is perfect. Below 15, the game breaks down.
+<dl class="glossary">
+<dt>TPS (Ticks Per Second)</dt>
+<dd>Minecraft's clock runs at 20 ticks per second. Each tick processes everything on the server — movement, mobs, redstone, weather. Stable 20.00 TPS is perfect. Below 15, the game breaks down.</dd>
 
-**MSPT (Milliseconds Per Tick)**
-How long each tick takes to process. Under 50ms is healthy. A high max MSPT means the server spiked — one tick took much longer than normal.
+<dt>MSPT (Milliseconds Per Tick)</dt>
+<dd>How long each tick takes to process. Under 50ms is healthy. A high max MSPT means the server spiked — one tick took much longer than normal.</dd>
 
-**Ping / Latency**
-Round-trip time between your game and the server, in milliseconds. Under 100ms is comfortable. 200–300ms is playable. Above 400ms, the game starts fighting you.
+<dt>Ping / Latency</dt>
+<dd>Round-trip time between your game and the server, in milliseconds. Under 100ms is comfortable. 200–300ms is playable. Above 400ms, the game starts fighting you.</dd>
 
-**Ping 95th Percentile**
-The worst ping 95% of the time. More honest than the average — it shows how bad normal play actually gets at its worst moments.
+<dt>Ping 95th Percentile</dt>
+<dd>The worst ping 95% of the time. More honest than the average — it shows how bad normal play actually gets at its worst moments.</dd>
 
-**Packet Loss**
-Data that never arrives. Causes rubber-banding, inventory desyncs, and disconnections. Worse than high latency because lost data has to be re-sent.
+<dt>Packet Loss</dt>
+<dd>Data that never arrives. Causes rubber-banding, inventory desyncs, and disconnections. Worse than high latency because lost data has to be re-sent.</dd>
 
-**GC (Garbage Collection)**
-Java periodically cleans up unused memory. During a GC event the server pauses briefly. Frequent or long GC events cause lag spikes even when TPS looks fine.
+<dt>GC (Garbage Collection)</dt>
+<dd>Java periodically cleans up unused memory. During a GC event the server pauses briefly. Frequent or long GC events cause lag spikes even when TPS looks fine.</dd>
 
-**Spark**
-A Minecraft server profiling plugin that collects all the above data during a live session. Every platform here was profiled under identical conditions — fresh world, PaperMC, no plugins, 10–15 minute session.
+<dt>Spark</dt>
+<dd>A Minecraft server profiling plugin that collects all the above data during a live session. Every platform here was profiled under identical conditions — fresh world, PaperMC, no plugins, 10–15 minute session.</dd>
 
-**IP Address**
-A numerical address identifying a server on the internet. Your game connects to this to reach the server.
+<dt>IP Address</dt>
+<dd>A numerical address identifying a server on the internet. Your game connects to this to reach the server.</dd>
 
-**DNS (Domain Name System)**
-Translates a server address like play.example.com into an IP address your game can use. Switching to Cloudflare's 1.1.1.1 or Google's 8.8.8.8 can improve routing — it won't fix a bad server location, but it can soften the impact.
+<dt>DNS (Domain Name System)</dt>
+<dd>Translates a server address like play.example.com into an IP address your game can use. Switching to Cloudflare's 1.1.1.1 or Google's 8.8.8.8 can improve routing — it won't fix a bad server location, but it can soften the impact.</dd>
 
-**Routing**
-The path your data takes between your device and the server. A bad route adds latency that has nothing to do with the server's actual performance.
+<dt>Routing</dt>
+<dd>The path your data takes between your device and the server. A bad route adds latency that has nothing to do with the server's actual performance.</dd>
 
-**Node**
-A physical machine in a data center that runs your Minecraft server. Which node you land on directly affects your ping.
+<dt>Node</dt>
+<dd>A physical machine in a data center that runs your Minecraft server. Which node you land on directly affects your ping.</dd>
 
-**ISP (Internet Service Provider)**
-The company providing your internet — Globe, PLDT, Converge, Sky. Your ISP determines your routing paths.
+<dt>ISP (Internet Service Provider)</dt>
+<dd>The company providing your internet — Globe, PLDT, Converge, Sky. Your ISP determines your routing paths.</dd>
 
-**Subdomain**
-A prefix on a domain — like soquincy.qzz.io. Free platforms assign these automatically so your server address is shareable without exposing a raw IP.
+<dt>Subdomain</dt>
+<dd>A prefix on a domain — like soquincy.qzz.io. Free platforms assign these automatically so your server address is shareable without exposing a raw IP.</dd>
 
-**Proxy**
-An intermediary server between your connection and the game server. Generally doesn't affect gameplay meaningfully.
+<dt>Proxy</dt>
+<dd>An intermediary server between your connection and the game server. Generally doesn't affect gameplay meaningfully.</dd>
 
-**VPN (Virtual Private Network)**
-Routes your traffic through a server elsewhere, changing your apparent location. Used in this test on PlayHosting specifically to isolate whether poor ping was a routing problem or a platform problem. It was routing.
+<dt>VPN (Virtual Private Network)</dt>
+<dd>Routes your traffic through a server elsewhere, changing your apparent location. Used in this test on PlayHosting specifically to isolate whether poor ping was a routing problem or a platform problem. It was routing.</dd>
 
-**DDoS Protection**
-Filters fake traffic floods before they knock your server offline.
+<dt>DDoS Protection</dt>
+<dd>Filters fake traffic floods before they knock your server offline.</dd>
 
-**PaperMC**
-A high-performance Minecraft server software used as the baseline for every platform in this test.
+<dt>PaperMC</dt>
+<dd>A high-performance Minecraft server software used as the baseline for every platform in this test.</dd>
 
-**Geyser / Floodgate**
-Geyser is a plugin that lets Bedrock Edition players — on mobile, console, or Windows — join a Java Edition server. Floodgate removes the requirement for Bedrock players to have a Java account.
+<dt>Geyser / Floodgate</dt>
+<dd>Geyser is a plugin that lets Bedrock Edition players — on mobile, console, or Windows — join a Java Edition server. Floodgate removes the requirement for Bedrock players to have a Java account.</dd>
 
-**Pterodactyl**
-An open-source game server control panel. If a hosting platform's UI looks like Pterodactyl, it probably is — or is built on top of it.
+<dt>Pterodactyl</dt>
+<dd>An open-source game server control panel. If a hosting platform's UI looks like Pterodactyl, it probably is — or is built on top of it.</dd>
 
-**Geo-restriction**
-When a platform limits access based on your country or region. FalixNodes applies this to free server starts without disclosing it before signup.
+<dt>Geo-restriction</dt>
+<dd>When a platform limits access based on your country or region. FalixNodes applies this to free server starts without disclosing it before signup.</dd>
 
-**Shared CPU / Shared Resources**
-Your server runs on hardware shared with other users. Standard on free hosting plans.
+<dt>Shared CPU / Shared Resources</dt>
+<dd>Your server runs on hardware shared with other users. Standard on free hosting plans.</dd>
 
-**RAM (Memory)**
-How much working memory your server has. Free plans typically offer 1–1.7GB.
+<dt>RAM (Memory)</dt>
+<dd>How much working memory your server has. Free plans typically offer 1–1.7GB.</dd>
+</dl>
 
 ---
 
-![Minekeep dashboard screenshot](/minekeepdb.png)
+![Minekeep dashboard screenshot](/minekeepdb.png){.article-img}
 
 ## Platform 1: Minekeep (minekeep.net)
 ### The one that just worked.
@@ -127,7 +129,7 @@ Cold start:
 
 Consistent across both runs. That consistency matters as much as the number itself.
 
-![Minekeep Spark profiler data](/minekeep.png)
+![Minekeep Spark profiler data](/minekeep.png){.article-img}
 
 ### Spark Data for Minekeep
 
@@ -139,6 +141,8 @@ Ads: None. Zero. Not on the dashboard, not on the console, not on any action.
 
 Console: Full text console with direct command input.
 
+<div class="score-card">
+
 **Minekeep — Scores**
 - How "free" is free: 5/5
 - Geyser / Bedrock: 5/5
@@ -149,9 +153,11 @@ Console: Full text console with direct command input.
 - Idle & uptime: 5/5
 - **Total: 31/35**
 
+</div>
+
 ---
 
-![Aternos dashboard screenshot](/aternosdb.png)
+![Aternos dashboard screenshot](/aternosdb.png){.article-img}
 
 ## Platform 2: Aternos (aternos.org)
 ### The veteran that's starting to show its age.
@@ -171,7 +177,7 @@ Cold start:
 
 A 34-second gap between runs means you can't predict what a new user gets. Run 1 was likely queue or node spin-up influenced. Run 2 is fast. Neither is guaranteed.
 
-![Aternos Spark profiler data](/aternos.png)
+![Aternos Spark profiler data](/aternos.png){.article-img}
 
 ### Spark Data for Aternos
 
@@ -185,6 +191,8 @@ Ads: First-party Exaroton ads throughout. Third-party ads appeared in the consol
 
 Physical location: Never disclosed. Ping suggests US East or a well-routed EU node — 227ms median is actually the best of the testable platforms from Davao Oriental.
 
+<div class="score-card">
+
 **Aternos — Scores**
 - How "free" is free: 3/5
 - Geyser / Bedrock: 4/5 (manual install, Floodgate bundled)
@@ -195,9 +203,11 @@ Physical location: Never disclosed. Ping suggests US East or a well-routed EU no
 - Idle & uptime: 3/5
 - **Total: 23/35**
 
+</div>
+
 ---
 
-![FalixNodes](/falixdb.png)
+![FalixNodes](/falixdb.png){.article-img}
 
 ## Platform 3: FalixNodes (falixnodes.net)
 ### Blocked at the door.
@@ -218,6 +228,8 @@ A VPN does not bypass this either.
 
 You complete full onboarding, pick your settings, and hit a wall. For a Filipino user — or any Southeast Asian user — FalixNodes' free plan does not exist.
 
+<div class="score-card">
+
 **FalixNodes — Scores**
 - How "free" is free: 1/5 (geo-blocked without disclosure)
 - Geyser / Bedrock: N/A
@@ -228,9 +240,11 @@ You complete full onboarding, pick your settings, and hit a wall. For a Filipino
 - Idle & uptime: N/A
 - **Total: 1/35 (only scoreable categories rated)**
 
+</div>
+
 ---
 
-![freemcserver.net ban e-mail](/fmcban.png)
+![freemcserver.net ban e-mail](/fmcban.png){.article-img}
 
 ## Platform 4: freemcserver.net
 ### Banned for nothing.
@@ -257,6 +271,8 @@ I was not using a VPN. The ban was a false positive — likely triggered by my I
 
 Third-party ads were visible before the ban even landed.
 
+<div class="score-card">
+
 **freemcserver.net — Scores**
 - How "free" is free: 1/5 (919-vendor wall, 4-hour expiry, ad load)
 - Geyser / Bedrock: N/A (banned before testing)
@@ -267,9 +283,11 @@ Third-party ads were visible before the ban even landed.
 - Idle & uptime: 1/5 (4-hour hard expiry)
 - **Total: 3/35**
 
+</div>
+
 ---
 
-![Play Hosting Spark Data (without VPN)](/playhostingreg.png)
+![Play Hosting Spark Data (without VPN)](/playhostingreg.png){.article-img}
 
 ## Platform 5: Play Hosting
 ### The best hardware in the test. The worst routing from the province.
@@ -285,7 +303,7 @@ Cold start:
 
 The fastest cold start in the entire test. It's not close.
 
-![Play Hosting Spark data (with VPN)](/playhostingvpn.png)
+![Play Hosting Spark data (with VPN)](/playhostingvpn.png){.article-img}
 
 ### Spark data for Play Hosting (VPN)
 
@@ -300,6 +318,8 @@ The no-VPN numbers are the primary score. That's the experience a Filipino user 
 Ads: None observed.
 Console: Full text console with direct command input.
 
+<div class="score-card">
+
 **PlayHosting — Scores**
 - How "free" is free: 4/5 (no ads, queue present)
 - Geyser / Bedrock: 3/5 (auto-install exists, manual required)
@@ -310,12 +330,16 @@ Console: Full text console with direct command input.
 - Idle & uptime: 4/5
 - **Total: 26/35**
 
+</div>
+
 ---
 
 ## The Platforms That Didn't Make It
 **Minefort** — Free plan does not exist in the Philippines. All options are paid on signup. No testing possible.
 
 ## Final Scoreboard
+
+<table class="scoreboard">
 
 | Platform | Score | SEA-Viable? |
 | :--- | :--- | :--- |
@@ -325,6 +349,8 @@ Console: Full text console with direct command input.
 | **freemcserver.net** | 3/35 | Maybe — false banned |
 | **FalixNodes** | 1/35 | No — geo-blocked |
 | **Minefort** | N/A | No — paid only in PH |
+
+</table>
 
 ## The Real Finding
 
@@ -347,4 +373,4 @@ Aternos works, and its software compatibility is the widest of any platform test
 
 The others aren't worth your time — at least not from here.
 
-> Tested April 2026. Single ISP, fixed broadband, Davao Oriental. Results will vary across providers and locations.<br /><br />**AI Disclosure:** Writing this blog post was assisted with Claude Sonnet 4.6. Data has been verified.
+<aside class="notice"><strong>Tested April 2026.</strong> Single ISP, fixed broadband, Davao Oriental. Results will vary across providers and locations.<br /><br /><strong>AI Disclosure:</strong> Writing this blog post was assisted with Claude Sonnet 4.6. Data has been verified.</aside>

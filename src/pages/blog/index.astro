@@ -6,10 +6,12 @@ const posts = await getCollection('blog');
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Blog | Quincy So">
-  <div class="prose">
-    <h1>Blog</h1>
-    <p>Thoughts and writings.</p>
+<BaseLayout theme="light" showThemeToggle={true} title="Blog | Quincy So">
+  <article>
+    <header class="article-header">
+      <h1>Blog</h1>
+      <p class="subtitle">Thoughts and writings.</p>
+    </header>
     <ul>
       {posts.map(post => (
         <li>
@@ -19,5 +21,5 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
         </li>
       ))}
     </ul>
-  </div>
+  </article>
 </BaseLayout>

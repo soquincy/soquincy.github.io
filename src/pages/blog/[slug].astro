@@ -14,15 +14,14 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={post.data.title}>
-  <article class="prose">
-    {post.data.heroImage && <img src={post.data.heroImage} alt={post.data.title} />}
-    <header>
+<BaseLayout theme="light" showThemeToggle={true} title={post.data.title}>
+  <article>
+    {post.data.heroImage && <img class="article-img" src={post.data.heroImage} alt={post.data.title} />}
+    <header class="article-header">
       <h1>{post.data.title}</h1>
-      {post.data.description && <p>{post.data.description}</p>}
-      <small>{post.data.pubDate.toISOString().split('T')[0]}</small>
+      {post.data.description && <p class="subtitle">{post.data.description}</p>}
+      <p class="byline">{post.data.pubDate.toISOString().split('T')[0]}</p>
     </header>
-    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #333;" />
     <Content />
   </article>
 </BaseLayout>
