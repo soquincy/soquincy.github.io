@@ -13,9 +13,7 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Host+Grotesk:wght@700&display=swap" rel="stylesheet" />
@@ -507,9 +505,34 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
       color: var(--fg);
     }
 
-    footer .legal-links {
+    footer .legal-glossary {
+      margin-top: 0.5rem;
       font-size: 0.75rem;
       opacity: 0.7;
+    }
+
+    footer .legal-glossary dt {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.15rem;
+      color: var(--muted);
+    }
+
+    footer .legal-glossary dd {
+      margin-left: 0;
+      margin-bottom: 0.1rem;
+    }
+
+    footer .legal-glossary dd a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer .legal-glossary dd a:hover {
+      color: var(--fg);
     }
 
     /* ── THEME TOGGLE BUTTON ──────────────────────────────── */
@@ -561,11 +584,12 @@ const { theme = 'dark', title = "Quincy So", showThemeToggle = false } = Astro.p
   </main>
 
   <footer>
-    Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@soquincy.qzz.io">hello@soquincy.qzz.io</a>
-    <br />
-    <span class="legal-links">
-      <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-of-service">Terms of Service</a>
-    </span>
+    <p>Quincy So &nbsp;·&nbsp; Observe. Reflect. Create. &nbsp;·&nbsp; <a href="mailto:hello@soquincy.qzz.io">hello@soquincy.qzz.io</a></p>
+    <dl class="legal-glossary">
+      <dt>Legal</dt>
+      <dd><a href="/privacy-policy/freesona">Freesona Privacy Policy</a></dd>
+      <dd><a href="/terms-of-service/freesona">Freesona Terms of Service</a></dd>
+    </dl>
   </footer>
 
   {showThemeToggle && (
