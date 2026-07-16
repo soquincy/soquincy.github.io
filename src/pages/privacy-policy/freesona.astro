@@ -8,7 +8,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <header class="article-header">
       <h1>Official Freesona Instances Privacy Policy</h1>
       <p class="subtitle">How your information is collected and used for Freesona-based bot instances operated by Quincy So</p>
-      <p class="byline">Last Updated: 2026-06-26</p>
+      <p class="byline">Last Updated: 2026-07-16</p>
     </header>
 
     <section class="notice">
@@ -22,23 +22,68 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <h2 id="1-information-we-collect">1. Information We Collect</h2>
 
-    <p>When you use a Freesona-based bot instance operated by Quincy So, we may collect basic interaction data such as messages sent to the bot, command usage, and server identifiers needed to provide the service. We may also collect diagnostic or error information to improve reliability.</p>
+    <p>When you use a Freesona-based bot instance operated by Quincy So, we may collect the following types of information:</p>
+
+    <ul>
+      <li><strong>Messages and commands</strong> — content you send to the bot, including slash commands, prefix commands, and direct messages in configured conversation channels.</li>
+      <li><strong>Server and user identifiers</strong> — Discord guild (server) IDs and user IDs needed to provide per-server configuration, per-user memory isolation, and command routing.</li>
+      <li><strong>Long-term memory facts</strong> — the bot may automatically extract and store facts about you (e.g., name, interests, projects) from your messages. These facts are stored locally in a SQLite database, keyed by your Discord user ID and guild ID, and are used to personalize future interactions. You can view, delete, or clear your stored facts at any time using <code>/memorylist</code>, <code>/memorydelete</code>, and <code>/memoryclear</code>.</li>
+      <li><strong>File attachments</strong> — images, PDFs, audio, video, and code files you send to the bot are transmitted to the configured AI provider for multimodal processing. Audio files may also be processed by MVSEP for vocal/instrumental separation. Media URLs may be processed via YouTube data extraction.</li>
+      <li><strong>Knowledge base content</strong> — server administrators may add documents (text, PDFs, EPUBs) to an optional local ChromaDB knowledge base. This content is stored locally and queried semantically during AI generation.</li>
+      <li><strong>RSS feed data</strong> — if RSS feeds are configured, the bot fetches and stores feed metadata (feed name, URL, latest item data) for auto-posting to designated channels.</li>
+      <li><strong>Diagnostic and error information</strong> — logs and error data used to debug issues and improve reliability.</li>
+    </ul>
 
     <h2 id="2-how-we-use-information">2. How We Use Information</h2>
 
-    <p>Collected information is used to operate the bot, respond to requests, enforce rules, debug issues, and improve performance. We do not sell personal data.</p>
+    <p>Collected information is used for the following purposes:</p>
+
+    <ul>
+      <li>Operating the bot and responding to your requests</li>
+      <li>Personalizing AI responses using your stored memory facts and the configured persona</li>
+      <li>Providing semantic knowledge retrieval from the local ChromaDB knowledge base</li>
+      <li>Enforcing server rules and these Terms of Service</li>
+      <li>Debugging issues and improving performance</li>
+      <li>Delivering RSS feed updates to configured channels</li>
+    </ul>
+
+    <p>We do not sell personal data. We do not use your data to train AI models.</p>
 
     <h2 id="3-data-sharing">3. Data Sharing</h2>
 
-    <p>We may share limited data with third-party AI, hosting, or processing providers that are necessary to fulfill your requests. Those providers are subject to their own privacy terms.</p>
+    <p>We may share limited data with third-party services that are necessary to fulfill your requests:</p>
+
+    <ul>
+      <li><strong>AI providers</strong> — messages, persona instructions, memory facts, knowledge base chunks, and file attachments are transmitted to the configured AI provider (Google Gemini, OpenAI, Ollama, NVIDIA NIM, Azure AI Foundry, Groq, or OpenRouter) to generate responses.</li>
+      <li><strong>Audio processing</strong> — audio files submitted for separation are transmitted to MVSEP.</li>
+      <li><strong>Web search</strong> — search queries are transmitted to a web search API for retrieval.</li>
+      <li><strong>Media extraction</strong> — YouTube and other media URLs may be processed via yt-dlp for metadata and content extraction.</li>
+      <li><strong>Hosting infrastructure</strong> — data passes through hosting providers (e.g., Railway, Render, or self-hosted infrastructure) necessary for bot operation.</li>
+    </ul>
+
+    <p>Each third-party provider is subject to its own privacy policy and terms. We are not responsible for their data practices.</p>
 
     <h2 id="4-data-retention">4. Data Retention</h2>
 
-    <p>We retain data only as long as needed for operation, security, or legal obligations. Where applicable, you may request deletion of your data through the designated support channels.</p>
+    <p>We retain data only as long as needed for operation, security, or legal obligations:</p>
+
+    <ul>
+      <li><strong>Memory facts</strong> — stored in a local SQLite database (<code>memory.db</code>) until you or a server administrator deletes them, or until the bot is removed from the server. Capped at 20 facts per user.</li>
+      <li><strong>Knowledge base entries</strong> — stored in a local ChromaDB collection until a server administrator deletes them via <code>/kbdelete</code>.</li>
+      <li><strong>RSS feed data</strong> — retained while the feed is configured; removed when the feed is deleted via <code>/rss remove</code>.</li>
+      <li><strong>Interaction logs</strong> — retained as needed for debugging and may be pruned periodically.</li>
+    </ul>
+
+    <p>You may request deletion of your memory facts at any time using <code>/memoryclear</code>. For other data deletion requests, contact the operator through the designated support channels.</p>
 
     <h2 id="5-your-choices">5. Your Choices</h2>
 
-    <p>You may avoid sharing unnecessary information by not using features that require it. Server administrators may also apply their own moderation policies.</p>
+    <ul>
+      <li><strong>Manage your memory</strong> — use <code>/memorylist</code> to view stored facts, <code>/memorydelete</code> to remove specific facts, and <code>/memoryclear</code> to clear all your facts.</li>
+      <li><strong>Avoid sharing sensitive information</strong> — do not send messages or files containing personal data you do not wish to be processed by AI providers or third-party services.</li>
+      <li><strong>Server administrators</strong> — may disable autonomous mode, clear channel history, manage knowledge base entries, and apply their own moderation policies.</li>
+      <li><strong>Do not use the bot</strong> — if you do not agree with these data practices, you may choose not to interact with the bot.</li>
+    </ul>
 
     <h2 id="6-changes-to-this-policy">6. Changes to This Policy</h2>
 

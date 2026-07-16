@@ -8,7 +8,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <header class="article-header">
       <h1>Official Freesona Instances Terms of Service</h1>
       <p class="subtitle">Rules governing the use of Freesona Discord bot instances operated by Quincy So</p>
-      <p class="byline">Last Updated: 2026-06-26</p>
+      <p class="byline">Last Updated: 2026-07-16</p>
     </header>
 
     <section class="notice">
@@ -69,6 +69,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <p>Use of the bot involves limited data collection as described in the <a href="/privacy-policy/freesona">Privacy Policy</a>. By using the bot, you also agree to the Privacy Policy.</p>
 
+    <h3 id="5a-memory-and-facts">5a. Memory and Facts</h3>
+
+    <p>The bot may automatically extract and store facts about you from your messages to improve future interactions. These facts are tied to your Discord user ID and the server (guild) where the interaction occurred. You can view, delete, or clear your stored facts using the <code>/memorylist</code>, <code>/memorydelete</code>, and <code>/memoryclear</code> commands. Server administrators may also manage memory facts for users in their server.</p>
+
+    <h3 id="5b-knowledge-base">5b. Knowledge Base</h3>
+
+    <p>Server administrators may add documents (text, PDFs, EPUBs) to an optional local knowledge base for semantic retrieval during AI generation. Content added to the knowledge base is stored locally and queried to provide contextually relevant responses. Administrators can manage entries via <code>/kbadd</code>, <code>/kblist</code>, and <code>/kbdelete</code>.</p>
+
+    <h3 id="5c-file-processing">5c. File and Media Processing</h3>
+
+    <p>You may send images, PDFs, audio, video, and code files to the bot for processing. These attachments are transmitted to the configured AI provider for analysis and may be processed by third-party services (e.g., MVSEP for audio separation, YouTube for media extraction). Do not submit files containing sensitive personal information you do not wish to be processed by these services.</p>
+
+    <h3 id="5d-autonomous-mode">5d. Autonomous Mode</h3>
+
+    <p>When enabled by server administrators, the bot may respond to messages in configured channels without being directly mentioned. This feature uses a confidence-scored intent evaluator — not random chance — and is subject to per-channel and per-user cooldowns to prevent excessive messaging. You can check whether autonomous mode is active using the <code>/debugpersona</code> command.</p>
+
     <h2 id="6-service-availability">6. Service Availability</h2>
 
     <p>The bot is provided "as is" with no guarantees of uptime, reliability, or continuous availability. Downtime may occur without notice.</p>
@@ -79,7 +95,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <h2 id="8-third-party-services">8. Third-Party Services</h2>
 
-    <p>This bot integrates with third-party APIs including Google Gemini, Wolfram Alpha, MVSEP, and others. Use of these services is subject to their respective terms and privacy policies. The bot owner is not responsible for the practices of these third parties.</p>
+    <p>This bot integrates with third-party AI providers and external APIs to fulfill requests. Supported providers include Google Gemini, OpenAI, Ollama, NVIDIA NIM, Azure AI Foundry, Groq, and OpenRouter. Additional integrations may include MVSEP (audio separation), YouTube content processing, web search APIs, and RSS feed fetching.</p>
+
+    <p>Use of these services is subject to their respective terms and privacy policies. The bot owner is not responsible for the practices, availability, or content of these third parties.</p>
 
     <h2 id="9-limitation-of-liability">9. Limitation of Liability</h2>
 
